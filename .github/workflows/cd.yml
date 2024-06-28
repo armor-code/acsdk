@@ -1,0 +1,25 @@
+{
+	"name": "cd",
+	"on": {
+		"push": {
+			"branches": ["main"]
+		}
+	},
+	"concurrency": {
+		"group": "${{ github.ref }}",
+		"cancel-in-progress": true
+	},
+	"permissions": {
+		"contents": "read",
+		"pages": "write",
+		"id-token": "write"
+	},
+	"jobs": {
+		"create-release": {
+			"runs-on": "ubuntu-latest",
+			"steps": [
+				# https://github.com/googleapis/release-please
+			]
+		}
+	}
+}
