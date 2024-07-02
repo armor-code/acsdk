@@ -18,7 +18,13 @@
 		"create-release": {
 			"runs-on": "ubuntu-latest",
 			"steps": [
-				# https://github.com/googleapis/release-please
+				{
+          "uses": "googleapis/release-please-action@v4",
+          "with": {
+            "token": "${{ secrets.PAT }}",
+            "release-type": "python"
+          }
+        }
 			]
 		}
 	}
