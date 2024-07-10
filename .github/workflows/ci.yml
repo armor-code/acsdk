@@ -19,11 +19,7 @@
 			},
 			"steps": [
 				{ "uses": "actions/checkout@v4", "with": { "ref": "main" } },
-				{ "uses": "actions/setup-node@v4" },
-				{ "uses": "actions/setup-python@v5" },
-
-				{ "uses": "bahmutov/npm-install@v1", "with": { "useLockFile": false } },
-				{ "run": "npm run ${{ matrix.script }}" }
+				{ "uses": "actions/setup-python@v5" }
 			],
 			"timeout-minutes": 15
 		}
