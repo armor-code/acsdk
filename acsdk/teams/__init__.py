@@ -1,1 +1,1 @@
-from .get import get_all_teams as get_all_teams
+from .get import get_all_teams as _get_all_teams

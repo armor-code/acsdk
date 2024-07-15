@@ -1,1 +1,1 @@
-from .get import get_all_users as get_all_users
+from .get import get_all_users as _get_all_users
