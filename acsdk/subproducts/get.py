@@ -4,7 +4,7 @@ from tqdm.asyncio import tqdm
 
 from ..util import fetch, Promise, match_fuzzy
 
-def get_subproducts(session, page_number=None):
+def _get_subproducts(session, page_number=None):
     return fetch(session, "get", "/user/sub-product/elastic", params=list({
         "environmentName": "PRODUCTION",
         "pageSize": "100",
@@ -15,7 +15,7 @@ def get_subproducts(session, page_number=None):
     }.items()))
 
 async def get_all_subproducts(session):
-    response = await (await get_subproducts(session)).json()
+    response = await (await _get_subproducts(session)).json()
 
     total_pages = response["totalPages"]
 
@@ -24,7 +24,7 @@ async def get_all_subproducts(session):
     if total_pages > 1:
         for page_number in range(1, total_pages):
             tasks.append(asyncio.create_task(Promise.reduce_series([
-                get_subproducts(session, page_number),
+                _get_subproducts(session, page_number),
                 lambda response: response.json(),
                 lambda data: data["content"]
             ])))

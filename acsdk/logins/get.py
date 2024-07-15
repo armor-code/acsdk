@@ -25,12 +25,12 @@ def get_projects_by_login_id(session, toolName, login_id, page_number = 0, **kwa
     # Not implemented because this endpoint doesn't appear to respect pagination parameters
     pass
 
-async def get_project_by_name(session, toolName, login_id, project_name):
-    return list(filter(lambda project: match_fuzzy(project["name"], project_name), await get_all_mappings_by_login_id(session, toolName, login_id)))
+async def get_project_by_name(session, tool_name, login_id, project_name):
+    return list(filter(lambda project: match_fuzzy(project["name"], project_name), await get_all_mappings_by_login_id(session, tool_name, login_id)))
 
-async def get_all_projects_by_login_id(session, toolName, login_id):
+async def get_all_projects_by_login_id(session, tool_name, login_id):
     # This endpoint doesn't appear to respect pagination parameters
-    response = await fetch(session, "get", "/user/tools/generic/configurations/" + toolName + "/project", params=list({
+    response = await fetch(session, "get", "/user/tools/generic/configurations/" + tool_name + "/project", params=list({
         "login_id": login_id
     }.items()))
 

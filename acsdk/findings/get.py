@@ -4,7 +4,7 @@ from tqdm.asyncio import tqdm
 
 from ..util import fetch, Promise
 
-def get_findings(session, page_number=None, **kwargs):
+def _get_findings(session, page_number=None, **kwargs):
     return fetch(session, "post", "/user/findings/", json={
         "filters": {},
         "ignoreDuplicate": True,
@@ -17,20 +17,20 @@ def get_findings(session, page_number=None, **kwargs):
         "size": 100
     })
 
-def clamp(minimum, x, maximum):
+def _clamp(minimum, x, maximum):
     return max(minimum, min(x, maximum))
 
 async def get_all_findings(session, **kwargs):
-    response = await (await get_findings(session, **kwargs)).json()
+    response = await (await _get_findings(session, **kwargs)).json()
 
-    total_pages = clamp(0, response["totalPages"], 100)
+    total_pages = _clamp(0, response["totalPages"], 100)
 
     tasks = []
 
     if total_pages >= 1:
         for page_number in range(1, total_pages):
             tasks.append(asyncio.create_task(Promise.reduce_series([
-                get_findings(session, page_number, **kwargs),
+                _get_findings(session, page_number, **kwargs),
                 lambda response: response.json(),
                 lambda data: data["content"]
             ])))
@@ -55,7 +55,7 @@ def get_findings_by_saved_search_id(session, saved_search_id, page_number=None,)
 async def get_all_findings_by_saved_search_id(session, saved_search_id):
     response = await (await get_findings_by_saved_search_id(session, saved_search_id)).json()
 
-    total_pages = clamp(0, response["totalPages"], 100)
+    total_pages = _clamp(0, response["totalPages"], 100)
 
     tasks = []
 
