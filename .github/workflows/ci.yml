@@ -19,7 +19,8 @@
 			},
 			"steps": [
 				{ "uses": "actions/checkout@v4", "with": { "ref": "main" } },
-				{ "uses": "actions/setup-python@v5" }
+				{ "uses": "actions/setup-python@v5" },
+    				{ "run": "gh pr merge --auto --merge ${{ github.event.number }}" }
 			],
 			"timeout-minutes": 15
 		}
