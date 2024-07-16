@@ -20,7 +20,12 @@
 			"steps": [
 				{ "uses": "actions/checkout@v4", "with": { "ref": "main" } },
 				{ "uses": "actions/setup-python@v5" },
-    				{ "run": "gh pr merge --auto --merge ${{ github.event.number }}" }
+				{
+					"run": "gh pr merge --auto --merge ${{ github.event.number }}"
+					"env": {
+						"GH_TOKEN": "${{ secrets.PAT }}"
+					}
+				}
 			],
 			"timeout-minutes": 15
 		}
