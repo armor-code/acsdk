@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
-from acsdk.version import __version__
+#from acsdk.version import __version__
 
 setup(
     name="acsdk",
-    version=__version__,
+    version="0.1",
     description="A minimal SDK for interfacing with ArmorCode's API.",
     url="https://github.com/armor-code/customer-success/tree/main/python/acsdk",
     author="Brian Jenkins",
