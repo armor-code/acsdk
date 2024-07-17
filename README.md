@@ -17,7 +17,7 @@
                 <ol>
                     <li><a href="#getting-started">Getting Started</a></li>
                     <ol>
-                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#install">Install</a></li>
                         <li><a href="#minimal-example">Minimal Example</a></li>
                     </ol>
                     <li><a href="#api">API</a></li>
@@ -157,9 +157,7 @@ import asyncio
 from acsdk import ArmorCodeClient, fetch
 
 async def main(api_key):
-    client = ArmorCodeClient(api_key, {
-        "base_url": "https://preprod.armorcode.ai"
-    })
+    client = ArmorCodeClient(api_key)
 
     page_number = None
 
