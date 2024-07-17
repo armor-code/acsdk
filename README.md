@@ -83,67 +83,67 @@ if __name__ == "__main__":
 
 ### Findings
 
-`client.get_all_findings`
+`client.get_all_findings()`
 
-`client.get_finding_by_id`
+`client.get_finding_by_id(finding_id)`
 
-`client.get_all_findings_by_saved_search_id`
+`client.get_all_findings_by_saved_search_id(saved_search_id)`
 
 ### Integrations
 
-`client.get_all_integrations`
+`client.get_all_integrations()`
 
 ### Security Tools
 
-`client.get_all_security_tools`
+`client.get_all_security_tools()`
 
 ### Logins
 
-`client.get_all_mappings_by_login_id`
+`client.get_all_mappings_by_login_id(tool_name, login_id)`
 
-`client.get_all_logins_by_tool_name`
+`client.get_all_logins_by_tool_name(tool_name)`
 
-`client.get_all_projects_by_login_id`
+`client.get_all_projects_by_login_id(tool_name, login_id)`
 
-`client.get_project_by_name`
+`client.get_project_by_name(tool_name, login_id, project_name)`
 
 <!-- `client.create_login` -->
 
 ### Products
 
-`client.get_all_products`
+`client.get_all_products()`
 
-`client.get_product_by_id`
+`client.get_product_by_id(product_id)`
 
-`client.get_products_by_name`
+`client.get_products_by_name(product_name)`
 
-`client.update_product_by_id`
+<!-- `client.update_product_by_id` -->
 
-<!-- client.create_product -->
+<!-- `client.create_product` -->
 
-`client.delete_product_by_id`
+<!-- `client.delete_product_by_id` -->
 
 ### Sub-products
 
-`client.get_all_subproducts`
+`client.get_all_subproducts()`
 
-`client.get_subproduct_by_id`
+`client.get_subproduct_by_id(subproduct_id)`
 
-`client.get_subproducts_by_name`
+`client.get_subproducts_by_name(subproduct_name)`
 
-`client.update_subproduct_by_id`
+<!-- `client.update_subproduct_by_id` -->
 
 <!-- `client.create_subproduct` -->
 
-`client.delete_subproduct_by_id`
+<!-- `client.delete_subproduct_by_id` -->
 
 ### Teams
 
-`client.get_all_teams`
+`client.get_all_teams()`
 
 ### Users
 
-`client.get_all_users`
+`client.get_all_users()`
 
 ## Advanced Usage
 
