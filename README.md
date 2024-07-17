@@ -83,71 +83,71 @@ if __name__ == "__main__":
 
 ### Findings
 
-get_all_findings
+`client.get_all_findings`
 
-get_finding_by_id
+`client.get_finding_by_id`
 
-get_all_findings_by_saved_search_id
+`client.get_all_findings_by_saved_search_id`
 
 ### Integrations
 
-get_all_integrations
+`client.get_all_integrations`
 
 ### Security Tools
 
-get_all_security_tools
+`client.get_all_security_tools`
 
 ### Logins
 
-get_all_mappings_by_login_id
+`client.get_all_mappings_by_login_id`
 
-get_all_logins_by_tool_name
+`client.get_all_logins_by_tool_name`
 
-get_all_projects_by_login_id
+`client.get_all_projects_by_login_id`
 
-get_project_by_name
+`client.get_project_by_name`
 
-<!-- create_login -->
+<!-- `client.create_login` -->
 
 ### Products
 
-get_all_products
+`client.get_all_products`
 
-get_product_by_id
+`client.get_product_by_id`
 
-get_products_by_name
+`client.get_products_by_name`
 
-update_product_by_id
+`client.update_product_by_id`
 
-create_product
+<!-- client.create_product -->
 
-delete_product_by_id
+`client.delete_product_by_id`
 
 ### Sub-products
 
-get_all_subproducts
+`client.get_all_subproducts`
 
-get_subproduct_by_id
+`client.get_subproduct_by_id`
 
-get_subproducts_by_name
+`client.get_subproducts_by_name`
 
-update_subproduct_by_id
+`client.update_subproduct_by_id`
 
-create_subproduct
+<!-- `client.create_subproduct` -->
 
-delete_subproduct_by_id
+`client.delete_subproduct_by_id`
 
 ### Teams
 
-get_all_teams
+`client.get_all_teams`
 
 ### Users
 
-get_all_users
+`client.get_all_users`
 
 ## Advanced Usage
 
-If you have calls that you would like to make that the SDK does not give you the desired customizability over, you can use the underlying `fetch` function to ensure that your requests adhere to ArmorCode's API request limit.
+If you have calls that you would like to make that the SDK does not give you the desired customizability over, you can use the underlying [`fetch`](/acsdk/util/fetch_without_logging.py) function to ensure that your requests adhere to ArmorCode's API request limit.
 
 > [!WARNING]
 > Depending on the API call, you may have to handle pagination yourself.
