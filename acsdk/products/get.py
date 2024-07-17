@@ -29,13 +29,13 @@ async def get_all_products(session):
                 lambda data: data["content"]
             ])))
 
-    subproducts = response["content"]
+    products = response["content"]
 
     pages = await tqdm.gather(*tasks)
 
-    subproducts.extend(chain.from_iterable(pages))
+    products.extend(chain.from_iterable(pages))
 
-    return subproducts
+    return products
 
 async def get_product_by_id(session, product_id):
     return await (await fetch(session, "get", "/user/product/" + str(product_id))).json()
