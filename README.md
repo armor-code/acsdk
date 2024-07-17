@@ -22,14 +22,14 @@
                     </ol>
                     <li><a href="#api">API</a></li>
                     <ol>
-                        <li><a href="#">Findings</a></li>
-                        <li><a href="#">Integrations</a></li>
-                        <li><a href="#">Security Tools</a></li>
-                        <li><a href="#">Logins</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Sub-products</a></li>
-                        <li><a href="#">Teams</a></li>
-                        <li><a href="#">Users</a></li>
+                        <li><a href="#findings">Findings</a></li>
+                        <li><a href="#integrations">Integrations</a></li>
+                        <li><a href="#security-tools">Security Tools</a></li>
+                        <li><a href="#logins">Logins</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#sub-products">Sub-products</a></li>
+                        <li><a href="#teams">Teams</a></li>
+                        <li><a href="#users">Users</a></li>
                     </ol>
                     <li><a href="#advanced-usage">Advanced Usage</a></li>
                 </ol>
