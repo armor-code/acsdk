@@ -5,7 +5,7 @@ setup(
     name="acsdk",
     version="0.1",
     description="A minimal SDK for interfacing with ArmorCode's API.",
-    url="https://github.com/armor-code/customer-success/tree/main/python/acsdk",
+    url="https://github.com/armor-code/acsdk",
     author="Brian Jenkins",
     author_email="bjenkins@armorcode.io",
     license="UNLICENSED",
