@@ -22,6 +22,7 @@
                     </ol>
                     <li><a href="#api">API</a></li>
                     <ol>
+                        <li><a href="#alerts">Alerts</a></li>
                         <li><a href="#findings">Findings</a></li>
                         <li><a href="#integrations">Integrations</a></li>
                         <li><a href="#security-tools">Security Tools</a></li>
@@ -80,6 +81,10 @@ if __name__ == "__main__":
 ```
 
 ## API
+
+### Alerts
+
+`client.get_all_alerts()`
 
 ### Findings
 
@@ -174,3 +179,55 @@ async def main(api_key):
 
     await client.close()
 ```
+
+## Common Workflows
+
+### Update a sub-product with a tag
+
+<table>
+  <tbody>
+    <tr>
+        <td colspan="2" width="50%"><strong>Get all products</strong></td>
+    </tr>
+    <tr>
+      <td width="50%">
+
+```python
+products = await client.get_all_products()
+```
+</td>
+      <td width="50%">
+
+```http
+GET https://app.armorcode.com/user/product/elastic/paged
+    ?environmentName=PRODUCTION
+    &pageSize=20
+    &pageNumber=0
+    &tags=
+    &sortBy=NAME
+    &direction=ASC
+```
+</td>
+    </tr>
+    <tr>
+        <td colspan="2" width="50%"><strong>Identify the product(s) you are interested in updating</strong></td>
+    </tr>
+    <tr>
+      <td width="50%">
+
+```python
+product = list(
+    filter(
+        lambda product: product["name"].casefold() == product_name.casefold(), products
+    )
+)
+```
+</td>
+      <td width="50%">
+
+```http
+```
+</td>
+    </tr>
+  </tbody>
+</table>
