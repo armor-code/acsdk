@@ -18,6 +18,14 @@ class ArmorCodeClient(aiohttp.ClientSession):
         })
 
 
+    # ===== from .alerts import * =====
+
+    from .alerts import _get_all_alerts
+
+    def get_all_alerts(self):
+        return self._get_all_alerts()
+
+
     # ===== from .findings import * =====
 
     from .findings import _get_all_findings

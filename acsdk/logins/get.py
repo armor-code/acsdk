@@ -21,7 +21,7 @@ async def get_all_mappings_by_login_id(session, tool_name, login_id):
         "toolFilters": {}
     })).json())["configurations"]
 
-def get_projects_by_login_id(session, toolName, login_id, page_number = 0, **kwargs):
+def _get_projects_by_login_id(session, toolName, login_id, page_number = 0, **kwargs):
     # Not implemented because this endpoint doesn't appear to respect pagination parameters
     pass
 
