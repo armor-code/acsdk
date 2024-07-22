@@ -2,4 +2,5 @@ from .get import get_all_mappings_by_login_id as _get_all_mappings_by_login_id
 from .get import get_all_logins_by_tool_name as _get_all_logins_by_tool_name
 from .get import get_all_projects_by_login_id as _get_all_projects_by_login_id
 from .get import get_project_by_name as _get_project_by_name
+from .get import get_all_unmapped_projects_by_login_id as _get_all_unmapped_projects_by_login_id
 from .create import create_login as _create_login
