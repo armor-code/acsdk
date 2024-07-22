@@ -12,7 +12,7 @@ class ArmorCodeClient(aiohttp.ClientSession):
 
         connector = aiohttp.TCPConnector()
 
-        super().__init__(base_url=overrides["base_url"] or "https://app.armorcode.com", connector=connector, headers={
+        super().__init__(base_url=overrides.get("base_url", "https://app.armorcode.com"), connector=connector, headers={
             "Authorization": "Bearer " + api_key,
             "User-Agent": "ArmorCode Python SDK v" + __version__
         })
@@ -99,6 +99,12 @@ class ArmorCodeClient(aiohttp.ClientSession):
 
     def get_project_by_name(self, tool_name, login_id, project_name):
         return self._get_project_by_name(tool_name, login_id, project_name)
+
+
+    from .logins import _get_all_unmapped_projects_by_login_id
+
+    def get_all_unmapped_projects_by_login_id(self, tool_name, login_id):
+        return self._get_all_unmapped_projects_by_login_id(tool_name, login_id)
 
 
     from .logins import _create_login
