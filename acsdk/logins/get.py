@@ -44,34 +44,25 @@ async def get_all_mappings_by_login_id(session, tool_name, login_id):
 
     return mappings
 
-def _get_projects_by_login_id(session, tool_name, login_id, page_number = 0, **kwargs):
-    # Not implemented because this endpoint doesn't appear to respect pagination parameters
-    pass
+def _get_projects_by_login_id(session, tool_name, login_id):
+    # This endpoint doesn't appear to respect pagination parameters
+    return fetch(session, "get", "/user/tools/generic/configurations/" + tool_name + "/project", params=list({
+        "login_id": login_id
+    }.items()))
+
+async def get_all_projects_by_login_id(session, tool_name, login_id):
+    return (await (await _get_projects_by_login_id(session, tool_name, login_id)).json())["projects"]
+
+async def get_all_unmapped_projects_by_login_id(session, tool_name, login_id):
+    projects = await get_all_projects_by_login_id(session, tool_name, login_id)
+
+    mappings = await get_all_mappings_by_login_id(session, tool_name, login_id)
+
+    unmapped_projects = [project for project in projects if not any(match_fuzzy(project["name"], mapping["name"]) for mapping in mappings)]
+
+    return unmapped_projects
 
 async def get_project_by_name(session, tool_name, login_id, project_name):
     projects = await get_all_mappings_by_login_id(session, tool_name, login_id)
 
     return list(filter(lambda project: match_fuzzy(project["name"], project_name), projects))
-
-async def get_all_projects_by_login_id(session, tool_name, login_id):
-    # This endpoint doesn't appear to respect pagination parameters
-    response = await fetch(session, "get", "/user/tools/generic/configurations/" + tool_name + "/project", params=list({
-        "login_id": login_id
-    }.items()))
-
-    data = await response.json()
-
-    return data["projects"]
-
-async def get_all_unmapped_projects_by_login_id(session, tool_name, login_id):
-    projects = await get_all_projects_by_login_id(session, tool_name, login_id)
-
-    print(projects)
-
-    mappings = await get_all_mappings_by_login_id(session, tool_name, login_id)
-
-    print(mappings)
-
-    unmapped_projects = [project for project in projects if not any(match_fuzzy(project["name"], mapping["name"]) for mapping in mappings)]
-
-    return unmapped_projects
