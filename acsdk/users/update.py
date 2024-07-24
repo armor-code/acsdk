@@ -5,7 +5,7 @@ async def update_user_by_id(session, user_id):
     user_payload = await get_user_by_id(user_id)
 
     response = await fetch(session, "put", "/user/add/user", json={
-        "email": "brianjenkins94@gmail.com",
+        "email": email,
         "disableLogin": true,
         "teamInfo": [
             {
