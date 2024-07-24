@@ -1,0 +1,30 @@
+# @title get logins by tool name
+GET /user/tools/generic/login_details/{{toolName}}
+
+###
+
+# @title get mappings by login ID
+POST /user/tools/generic/configurations/{{toolName}}
+Content-Type: application/json
+
+{
+    "size": 10,
+    "sort": "createdAt,desc",
+    "sortOrder": "desc",
+    "sortColumn": "createdAt",
+    "filters": {},
+    "toolType": "PULL",
+    "loginId": {{loginId}},
+    "toolFilters": {}
+}
+
+###
+
+# @title get projects by login ID
+GET /user/tools/generic/configurations/{{toolName}}/project
+    ?login_id={{loginId}}
+
+###
+
+# @title create login
+#POST /tbd

@@ -1,0 +1,70 @@
+# @title get subproducts
+GET /user/sub-product/elastic
+    ?environmentName=PRODUCTION
+    &pageSize=100
+    &tags=
+    &sortBy=NAME
+    &direction=ASC
+
+###
+
+# @title get subproduct by ID
+GET /api/sub-product/{{subproductId}}
+
+###
+
+# @title create subproduct
+POST /api/sub-product
+Content-Type: application/json
+
+{
+        "environments": [
+            {
+                "name": "Production",
+                "branch": "master",
+                "url": ""
+            },
+            {
+                "name": "Staging",
+                "branch": "master",
+                "url": ""
+            }
+        ],
+        "engineeringOwner": null,
+        "securityOwner": null,
+        "businessOwner": null,
+        "complianceOwner": null,
+        "supportOwner": null,
+        "confidentialityRequirement": "Not Defined",
+        "availabilityRequirement": "Low",
+        "availability": "None",
+        "attackingVector": "Network",
+        "publicCloud": true,
+        "internetFacing": true,
+        "product": {
+            "id": {{product_id}}
+        },
+        "name": "{{subproduct_name}}",
+        "types": [],
+        "status": "Active",
+        "programmingLanguage": "",
+        "technologies": "",
+        "slaTemplateId": null,
+        "confidentiality": "NONE",
+        "confidentialityOptions": ""
+    }
+
+###
+
+# @title update subproduct by ID
+PUT /api/sub-product/{{subproductId}}
+Content-Type: application/json
+
+{
+    "see": "above"
+}
+
+###
+
+# @title delete subproduct by ID
+DELETE /api/sub-product/{{subproductId}}

@@ -1,0 +1,24 @@
+# @title get findings
+POST /user/findings/
+Content-Type: application/json
+
+{
+    "filters": {},
+    "ignoreDuplicate": true,
+    "ignoreMitigated": null,
+    "sort": "",
+    "sortColumns": [],
+    "ticketStatusRequired": true,
+    "size": 100
+}
+
+###
+
+# @title get finding by ID
+GET /user/findings/{{findingId}}
+
+###
+
+# @title get findings by saved search ID
+GET /user/findings/saved-search/{{savedSearchId}}
+    ?size=100

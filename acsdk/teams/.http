@@ -1,0 +1,48 @@
+# @title get teams
+GET /api/team/filters
+
+###
+
+# @title get team by ID
+GET /api/team/{{teamID}}
+
+###
+
+# @title create team
+POST /api/team
+Content-Type: application/json
+
+{
+    "name": "{{teamName}}",
+    "description": "",
+    "members": [],
+    "properties": [
+        {
+            "businessUnitId": 2255,
+            "businessUnitName": "Default Organization",
+            "productSubProductMap": [],
+            "accessOnAllProduct": true,
+            "accessType": "individual",
+            "groups": []
+        }
+    ],
+    "approvalWorkflow": {
+        "approvers": []
+    },
+    "emailAlias": ""
+}
+
+###
+
+# @title update team by ID
+PUT /api/team/with-user
+Content-Type: application/json
+
+{
+    "see": "above"
+}
+
+###
+
+# @title delete team by ID
+DELETE /api/team/{{teamId}}

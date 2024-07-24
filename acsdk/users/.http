@@ -1,0 +1,30 @@
+# @title get users
+GET /user/data/users
+
+###
+
+# @title create user
+POST /user/data/user
+Content-Type: application/json
+
+{
+    "email": "{{email}}",
+    "disableLogin": disable_login,
+    "tenantRole": tenant_role,
+    "teamInfo": None
+}
+
+###
+
+# @title update user
+PUT /user/update/user
+Content-Type: application/json
+
+{
+    "see": "above"
+}
+
+###
+
+# @title delete user
+DELETE /user/data/remove/{{userId}}

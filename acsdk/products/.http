@@ -1,0 +1,27 @@
+# @title get products
+GET /user/product/elastic/paged
+    ?environmentName=PRODUCTION
+    &pageSize=100
+    &tags=
+    &sortBy=NAME
+    &direction=ASC
+
+###
+
+# @title get product by ID
+GET /user/product/{{productId}}
+
+###
+
+# @title create product
+#POST /tbd
+
+###
+
+# @title update product by ID
+#PUT /tbd
+
+###
+
+# @title delete product by ID
+DELETE /user/product/{{productId}}
