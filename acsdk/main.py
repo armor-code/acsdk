@@ -203,9 +203,59 @@ class ArmorCodeClient(aiohttp.ClientSession):
     def get_all_teams(self):
         return self._get_all_teams()
 
+
+    from .teams import _get_team_by_id
+
+    def get_team_by_id(self, team_id):
+        return self._get_team_by_id(team_id)
+
+
+    # from .teams import _create_team
+    #
+    # def create_team(self):
+    #     return self._create_team()
+
+
+    # from .teams import _update_team_by_id
+    #
+    # def update_team_by_id(self):
+    #     return self._update_team_by_id()
+
+
+    from .teams import _delete_team_by_id
+
+    def delete_team_by_id(self, team_id):
+        return self._delete_team_by_id(team_id)
+
+
     # ===== from .users import * =====
 
     from .users import _get_all_users
 
     def get_all_users(self):
         return self._get_all_users()
+
+
+    from .users import _get_user_by_id
+
+    def get_user_by_id(self, user_id):
+        return self._get_user_by_id(user_id)
+
+
+    # from .users import _create_user
+    #
+    # def create_user(self):
+    #     return self._create_user()
+
+
+    # from .users import _update_user_by_id
+    #
+    # def update_user_by_id(self):
+    #     return self._update_user_by_id()
+
+
+    from .users import _delete_user_by_id
+
+    def delete_user_by_id(self, user_id):
+        return self._delete_user_by_id(user_id)
+        

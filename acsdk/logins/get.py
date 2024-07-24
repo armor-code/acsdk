@@ -54,6 +54,7 @@ async def get_all_projects_by_login_id(session, tool_name, login_id):
     return (await (await _get_projects_by_login_id(session, tool_name, login_id)).json())["projects"]
 
 async def get_all_unmapped_projects_by_login_id(session, tool_name, login_id):
+    # TODO: Parallelize
     projects = await get_all_projects_by_login_id(session, tool_name, login_id)
 
     mappings = await get_all_mappings_by_login_id(session, tool_name, login_id)

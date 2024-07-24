@@ -46,14 +46,14 @@ async def get_all_findings(session, **kwargs):
 async def get_finding_by_id(session, finding_id):
     return await (await fetch(session, "get", "/user/findings/" + str(finding_id))).json()
 
-def get_findings_by_saved_search_id(session, saved_search_id, page_number=None,):
+def _get_findings_by_saved_search_id(session, saved_search_id, page_number=None,):
     return fetch(session, "get", "/user/findings/saved-search/" + str(saved_search_id), params=list({
         "size": "100",
         **({"page": str(page_number)} if page_number is not None else {}),
     }.items()))
 
 async def get_all_findings_by_saved_search_id(session, saved_search_id):
-    response = await (await get_findings_by_saved_search_id(session, saved_search_id)).json()
+    response = await (await _get_findings_by_saved_search_id(session, saved_search_id)).json()
 
     total_pages = _clamp(0, response["totalPages"], 100)
 
@@ -62,7 +62,7 @@ async def get_all_findings_by_saved_search_id(session, saved_search_id):
     if total_pages >= 1:
         for page_number in range(1, total_pages):
             tasks.append(asyncio.create_task(Promise.reduce_series([
-                get_findings_by_saved_search_id(session, saved_search_id, page_number),
+                _get_findings_by_saved_search_id(session, saved_search_id, page_number),
                 lambda response: response.json(),
                 lambda data: data["content"]
             ])))
