@@ -1,6 +1,25 @@
 # @title get users
 GET /user/data/users
 
+HTTP/1.1 200 - OK
+Content-Type: application/json
+
+[
+    {
+        "userId": 3692,
+        "email": "bjenkins@armorcode.io",
+        "tenantRole": "ROLE_TENANTADMIN",
+        "name": "Brian Jenkins",
+        "data": null,
+        "canBeModified": true,
+        "disableLogin": false,
+        "isBasicAuthEnabled": false,
+        "lastlogin": 1721910574000,
+        "teamInfo": null,
+        "defaultBu": null
+    }
+]
+
 ###
 
 # @title create user

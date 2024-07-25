@@ -7,7 +7,7 @@ from ..util import fetch, Promise
 def _get_products(session, page_number=None):
     return fetch(session, "get", "/user/product/elastic/paged", params=list({
         "environmentName": "PRODUCTION",
-        "pageSize": "100",
+        "pageSize": "20",
         **({"pageNumber": str(page_number)} if page_number is not None else {}),
         "tags": "",
         "sortBy": "NAME",

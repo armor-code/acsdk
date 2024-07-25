@@ -1,10 +1,22 @@
 # @title get teams
 GET /api/team/filters
 
+HTTP/1.1 200 - OK
+Content-Type: application/json
+
+{
+    "name": [
+        {
+            "id": 16635,
+            "name": "All Armorcode Users"
+        }
+    ]
+}
+
 ###
 
 # @title get team by ID
-GET /api/team/{{teamID}}
+GET /api/team/{{teamId}}
 
 ###
 

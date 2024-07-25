@@ -12,6 +12,199 @@ Content-Type: application/json
     "size": 100
 }
 
+HTTP/1.1 200 - OK
+Content-Type: application/json
+
+{
+    "content": [
+        {
+            "ruleId": [
+                "1.327",
+                "1.20"
+            ],
+            "mitigation": "Patched version: 4.2.2",
+            "impact": null,
+            "stepsToReproduce": null,
+            "description": "Versions 4.2.1 and earlier of `jsonwebtoken` are affected by a verification bypass vulnerability. This is a result of weak validation of the JWT algorithm type, occuring when an attacker is allowed to arbitrarily specify the JWT algorithm.\n\n\n\n\n## Recommendation\n\nUpdate to version 4.2.2 or later.\n\n ### References: \n- https://nvd.nist.gov/vuln/detail/CVE-2015-9235\n- https://github.com/auth0/node-jsonwebtoken/commit/1bb584bc382295eeb7ee8c4452a673a77a68b687\n- https://auth0.com/blog/2015/03/31/critical-vulnerabilities-in-json-web-token-libraries/\n- https://github.com/advisories/GHSA-c7hr-j4mj-j2w6\n- https://www.npmjs.com/advisories/17\n- https://www.timmclean.net/2015/02/25/jwt-alg-none.html",
+            "source": "Dependabot",
+            "severity": "CRITICAL",
+            "armorcodeCategory": "Secrets",
+            "findingCategory": "Vulnerability",
+            "category": "Vulnerability",
+            "status": "OPEN",
+            "productStatus": "Active",
+            "subProductStatuses": "Active",
+            "id": 659573042,
+            "tid": 161,
+            "policy": null,
+            "lastUpdated": 1717526668000,
+            "createdAt": 1715361339000,
+            "externalMappings": {},
+            "title": "jsonwebtoken : = 0.4.0 - Verification Bypass in jsonwebtoken",
+            "armorcodeTicket": [],
+            "toolSeverity": "CRITICAL",
+            "cwe": [
+                "20"
+            ],
+            "cve": [
+                "CVE-2015-9235"
+            ],
+            "product": {
+                "id": 158036,
+                "name": "PRODUCT_NAME"
+            },
+            "subProduct": {
+                "id": 346991,
+                "name": "SUBPRODUCT_NAME"
+            },
+            "environment": {
+                "id": 679687,
+                "name": "Production"
+            },
+            "securityOwner": {
+                "id": null,
+                "name": null
+            },
+            "owner": {
+                "id": null,
+                "name": null
+            },
+            "developer": "bjenkins-armorcode@gmail.com",
+            "developerName": "Brian Jenkins",
+            "toolId": "RVA_kwDOLpS_Gc8AAAABR2PYgQ",
+            "filePath": "package.json",
+            "url": "https://github.com/bjenkins-armorcode/juice-shop/security/dependabot/1",
+            "lineNumber": null,
+            "mitigated": false,
+            "scan": 19280155,
+            "scanType": [
+                "SCA"
+            ],
+            "analysisType": "STATIC",
+            "similarFindings": null,
+            "additionalDetails": {
+                "COMMIT_MESSAGE": "Import juice-shop",
+                "FIXED_BY_DEVELOPER_EMAIL": "bjenkins-armorcode@gmail.com",
+                "isCISAKEV": false,
+                "FIXED_COMMIT_MESSAGE": "Import juice-shop",
+                "cvssVectorV2": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                "COMMIT_URL": "https://github.com/bjenkins-armorcode/juice-shop/commit/71513add1e6e56dc66395fdc7f405e7eb8953d31",
+                "cvssVectorV3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                "epssScore": 0.75142,
+                "repositoryName": "bjenkins-armorcode/juice-shop",
+                "FIXED_COMMIT_URL": "https://github.com/bjenkins-armorcode/juice-shop/commit/71513add1e6e56dc66395fdc7f405e7eb8953d31",
+                "componentFixVersions": "4.2.2",
+                "repositoryUrl": "https://github.com/bjenkins-armorcode/juice-shop",
+                "cveUsed": "CVE-2015-9235",
+                "aeName": "Production",
+                "exploited": false,
+                "FIXED_BY_DEVELOPER_NAME": "Brian Jenkins",
+                "dateSource": "tool",
+                "scanType": "SCA",
+                "toolFindingStatus": "OPEN",
+                "category": "Vulnerability",
+                "aatiScore": 8.04,
+                "toolStatusOriginal": "OPEN",
+                "cvePublishedDate": 1527625740000,
+                "cveLastModifiedVulDate": 1570662900000
+            },
+            "slaBreached": true,
+            "unsupressTime": null,
+            "componentName": "jsonwebtoken",
+            "componentVersion": "= 0.4.0",
+            "slaDueDate": 1715019036000,
+            "triageDueDate": 1714587036000,
+            "remediationDueDate": null,
+            "underReview": null,
+            "proposedData": null,
+            "tagsMetaMap": {
+                "SUBPRODUCT": []
+            },
+            "team": {
+                "id": null,
+                "name": null
+            },
+            "tags": [],
+            "foundOn": 1714414236000,
+            "foundOnDate": 1714414236000,
+            "baseScore": 9.8,
+            "impactScore": 5.9,
+            "exploitabilityScore": 3.9,
+            "publishedDate": 1527625740000,
+            "lastModifiedDate": 1570662900000,
+            "issueResolved": null,
+            "toolFindingStatus": "OPEN",
+            "toolStatusOriginal": null,
+            "cvssVector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "newUrl": null,
+            "findingScore": 5.1,
+            "riskScore": null,
+            "armorcodeProjects": null,
+            "vendor": null,
+            "subProductVersion": null,
+            "productVersion": null,
+            "mitigatedAt": null,
+            "lastTriagedDate": null,
+            "lastConfirmDate": null,
+            "lastFalsePositiveDate": null,
+            "lastOpenDate": 1715361339930,
+            "lastAcceptRiskDate": null,
+            "lastSuppressDate": null,
+            "lastSeenDate": 1715299200000,
+            "lastTriagedDateTime": null,
+            "lastConfirmDateTime": null,
+            "lastFalsePositiveDateTime": null,
+            "lastOpenDateTime": 1715361339000,
+            "lastAcceptRiskDateTime": null,
+            "lastSuppressDateTime": null,
+            "lastControlledDateTime": null,
+            "lastInProgressDateTime": null,
+            "lastTriageDateTime": null,
+            "indirectExportFields": null,
+            "assetScore": null,
+            "comments": null,
+            "history": null,
+            "exploitMetaInfo": null,
+            "attachments": null,
+            "tagsUsedForAssetScore": [],
+            "versionFindingsCount": null,
+            "correlatedFindingsCount": null,
+            "vmHostIpAddresses": null,
+            "riskRegisters": null,
+            "ctiScore": null,
+            "cwesStrings": [
+                "CWE-20"
+            ],
+            "assessment": []
+        }
+    ],
+    "pageable": {
+        "pageNumber": 0,
+        "pageSize": 100,
+        "sort": {
+            "sorted": true,
+            "empty": false,
+            "unsorted": false
+        },
+        "offset": 0,
+        "paged": true,
+        "unpaged": false
+    },
+    "last": false,
+    "totalElements": 1,
+    "totalPages": 1,
+    "first": true,
+    "size": 100,
+    "number": 0,
+    "sort": {
+        "sorted": true,
+        "empty": false,
+        "unsorted": false
+    },
+    "numberOfElements": 1,
+    "empty": false
+}
+
 ###
 
 # @title get finding by ID
