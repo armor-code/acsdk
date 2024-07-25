@@ -1,9 +1,33 @@
-# @title get alerts
-GET /api/alerts
+<details><summary><code>client.get_all_alerts()</code></summary>
 
-HTTP/1.1 200 - OK
-Content-Type: application/json
+#### Example:
 
+<table>
+	<tbody>
+		<tr>
+			<th width="441"><strong>Python</strong></td>
+			<th width="441"><strong>REST</strong></td>
+		</tr>
+		<tr>
+			<td>
+
+```python
+alerts = await client.get_all_alerts()
+```
+</td>
+			<td>
+
+```http
+GET https://app.armorcode.com/api/alerts
+```
+</td>
+		</tr>
+	</tbody>
+</table>
+
+#### Response:
+
+```json
 {
     "content": [
         {
@@ -65,3 +89,6 @@ Content-Type: application/json
     "numberOfElements": 1,
     "empty": false
 }
+```
+
+</details>
