@@ -19,8 +19,8 @@
 					<ol>
 						<li><a href="#install">Install</a></li>
 						<li><a href="#minimal-example">Minimal Example</a></li>
-						<li><a href="#api">API</a></li>
 					</ol>
+					<li><a href="#api">API</a></li>
 					<ol>
 						<li><a href="#alerts">Alerts</a></li>
 						<li><a href="#findings">Findings</a></li>
@@ -31,8 +31,8 @@
 						<li><a href="#sub-products">Sub-products</a></li>
 						<li><a href="#teams">Teams</a></li>
 						<li><a href="#users">Users</a></li>
-						<li><a href="#advanced-usage">Advanced Usage</a></li>
 					</ol>
+					<li><a href="#advanced-usage">Advanced Usage</a></li>
 				</ol>
 			</td>
 		</tr>
