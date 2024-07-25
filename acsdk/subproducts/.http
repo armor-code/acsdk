@@ -2,6 +2,7 @@
 GET /user/sub-product/elastic
     ?environmentName=PRODUCTION
     &pageSize=100
+    &pageNumber=0
     &tags=
     &sortBy=NAME
     &direction=ASC
@@ -124,41 +125,41 @@ POST /api/sub-product
 Content-Type: application/json
 
 {
-        "environments": [
-            {
-                "name": "Production",
-                "branch": "master",
-                "url": ""
-            },
-            {
-                "name": "Staging",
-                "branch": "master",
-                "url": ""
-            }
-        ],
-        "engineeringOwner": null,
-        "securityOwner": null,
-        "businessOwner": null,
-        "complianceOwner": null,
-        "supportOwner": null,
-        "confidentialityRequirement": "Not Defined",
-        "availabilityRequirement": "Low",
-        "availability": "None",
-        "attackingVector": "Network",
-        "publicCloud": true,
-        "internetFacing": true,
-        "product": {
-            "id": {{productId}}
+    "environments": [
+        {
+            "name": "Production",
+            "branch": "master",
+            "url": ""
         },
-        "name": "{{subproductName}}",
-        "types": [],
-        "status": "Active",
-        "programmingLanguage": "",
-        "technologies": "",
-        "slaTemplateId": null,
-        "confidentiality": "NONE",
-        "confidentialityOptions": ""
-    }
+        {
+            "name": "Staging",
+            "branch": "master",
+            "url": ""
+        }
+    ],
+    "engineeringOwner": null,
+    "securityOwner": null,
+    "businessOwner": null,
+    "complianceOwner": null,
+    "supportOwner": null,
+    "confidentialityRequirement": "Not Defined",
+    "availabilityRequirement": "Low",
+    "availability": "None",
+    "attackingVector": "Network",
+    "publicCloud": true,
+    "internetFacing": true,
+    "product": {
+        "id": {{productId}}
+    },
+    "name": "{{subproductName}}",
+    "types": [],
+    "status": "Active",
+    "programmingLanguage": "",
+    "technologies": "",
+    "slaTemplateId": null,
+    "confidentiality": "NONE",
+    "confidentialityOptions": ""
+}
 
 ###
 

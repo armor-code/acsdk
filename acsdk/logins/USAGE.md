@@ -158,6 +158,7 @@ projects = await client.get_all_projects_by_login_id(tool_name, login_id)
 ```http
 GET /user/tools/generic/configurations/{{toolName}}/project
     ?login_id={{loginId}}
+    &page=0
 
 ```
 </td>

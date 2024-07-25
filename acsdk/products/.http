@@ -1,6 +1,7 @@
 # @title get products
 GET /user/product/elastic/paged
     ?environmentName=PRODUCTION
+    &pageNumber=0
     &pageSize=20
     &tags=
     &sortBy=NAME

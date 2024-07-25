@@ -89,6 +89,7 @@ Content-Type: application/json
 # @title get projects by login ID
 GET /user/tools/generic/configurations/{{toolName}}/project
     ?login_id={{loginId}}
+    &page=0
 
 HTTP 1.1/200 - OK
 Content-Type: application/json
