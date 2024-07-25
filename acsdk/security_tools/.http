@@ -1,2 +1,29 @@
 # @title get security tools
 GET /user/tools/appsec-tools/status
+
+HTTP/1.1 200 - OK
+Content-Type: application/json
+
+[
+    {
+        "toolName": "Snyk",
+        "toolType": "SCA/SAST/Container Security/IaC",
+        "toolId": "SNYK",
+        "configurationStatus": "ACTIVE",
+        "integrations": 1,
+        "operationalStatus": "ACTIVE",
+        "scanStatus": null,
+        "executionDate": 1721911072000,
+        "version": [],
+        "isAuditEnabled": true,
+        "businessUnitId": null,
+        "tenant": null,
+        "productId": null,
+        "subProductId": null,
+        "isShareable": true,
+        "operationalStatusMessage": "",
+        "activeCount": 1,
+        "inactiveCount": 0,
+        "configErrorCount": 0
+    }
+]

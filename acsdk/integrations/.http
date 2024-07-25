@@ -1,6 +1,33 @@
 # @title get integrations
 GET /user/tools/integration-tools/status
 
+HTTP/1.1 200 - OK
+Content-Type: application/json
+
+[
+    {
+        "toolName": "APIKEY",
+        "toolType": "INTEGRATION",
+        "toolId": "APIKEY",
+        "configurationStatus": "ACTIVE",
+        "integrations": 1,
+        "operationalStatus": "ACTIVE",
+        "scanStatus": null,
+        "executionDate": 1717766692000,
+        "version": null,
+        "isAuditEnabled": false,
+        "businessUnitId": null,
+        "tenant": null,
+        "productId": null,
+        "subProductId": null,
+        "isShareable": null,
+        "operationalStatusMessage": null,
+        "activeCount": 1,
+        "inactiveCount": 0,
+        "configErrorCount": 0
+    }
+]
+
 ###
 
 # @title create integration
