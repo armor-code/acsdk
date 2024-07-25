@@ -1,9 +1,33 @@
-# @title get teams
-GET /api/team/filters
+<details><summary><code>client.get_all_teams()</code></summary>
 
-HTTP/1.1 200 - OK
-Content-Type: application/json
+#### Example:
 
+<table>
+	<tbody>
+		<tr>
+			<th width="441"><strong>Python</strong></td>
+			<th width="441"><strong>REST</strong></td>
+		</tr>
+		<tr>
+			<td>
+
+```python
+teams = await client.get_all_teams()
+```
+</td>
+			<td>
+
+```http
+GET https://app.armorcode.com/api/team/filters
+```
+</td>
+		</tr>
+	</tbody>
+</table>
+
+#### Response:
+
+```json
 {
     "name": [
         {
@@ -12,15 +36,40 @@ Content-Type: application/json
         }
     ]
 }
+```
 
-###
+</details>
 
-# @title get team by ID
-GET /api/team/{{teamId}}
+<details><summary><code>client.get_team_by_id()</code></summary>
 
-HTTP/1.1 200 - OK
-Content-Type: application/json
+#### Example:
 
+<table>
+	<tbody>
+		<tr>
+			<th width="441"><strong>Python</strong></td>
+			<th width="441"><strong>REST</strong></td>
+		</tr>
+		<tr>
+			<td>
+
+```python
+team = await client.get_team_by_id()
+```
+</td>
+			<td>
+
+```http
+GET https://app.armorcode.com/api/team/{{teamId}}
+```
+</td>
+		</tr>
+	</tbody>
+</table>
+
+#### Response:
+
+```json
 {
     "id": 16635,
     "createdAt": 1717766578000,
@@ -53,44 +102,6 @@ Content-Type: application/json
     "supportOwner": null,
     "businessOwner": null
 }
+```
 
-###
-
-# @title create team
-POST /api/team
-Content-Type: application/json
-
-{
-    "name": "{{teamName}}",
-    "description": "",
-    "members": [],
-    "properties": [
-        {
-            "businessUnitId": 2255,
-            "businessUnitName": "Default Organization",
-            "productSubProductMap": [],
-            "accessOnAllProduct": true,
-            "accessType": "individual",
-            "groups": []
-        }
-    ],
-    "approvalWorkflow": {
-        "approvers": []
-    },
-    "emailAlias": ""
-}
-
-###
-
-# @title update team by ID
-PUT /api/team/with-user
-Content-Type: application/json
-
-{
-    "see": "above"
-}
-
-###
-
-# @title delete team by ID
-DELETE /api/team/{{teamId}}
+</details>
