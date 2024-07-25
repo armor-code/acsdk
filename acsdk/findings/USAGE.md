@@ -28,6 +28,7 @@ Content-Type: application/json
     "sort": "",
     "sortColumns": [],
     "ticketStatusRequired": true,
+    "page": 0,
     "size": 100
 }
 ```
@@ -449,7 +450,8 @@ findings = await client.get_all_findings_by_saved_search_id(saved_search_id)
 
 ```http
 GET https://app.armorcode.com/user/findings/saved-search/{{saved_search_id}}
-    ?size=10
+    ?page=0
+    &size=100
 ```
 </td>
 		</tr>

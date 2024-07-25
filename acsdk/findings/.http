@@ -9,6 +9,7 @@ Content-Type: application/json
     "sort": "",
     "sortColumns": [],
     "ticketStatusRequired": true,
+    "page": 0,
     "size": 100
 }
 
@@ -214,4 +215,5 @@ GET /user/findings/{{findingId}}
 
 # @title get findings by saved search ID
 GET /user/findings/saved-search/{{savedSearchId}}
-    ?size=100
+    ?page=0
+    &size=100

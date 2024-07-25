@@ -19,6 +19,10 @@ alerts = await client.get_all_alerts()
 
 ```http
 GET https://app.armorcode.com/api/alerts
+    ?severity=CRITICAL,HIGH
+    &page=0
+    &size=10
+    &sort=createdAt,desc
 ```
 </td>
 		</tr>
