@@ -18,7 +18,7 @@ logins = await client.get_all_logins_by_tool_name(tool_name)
 			<td>
 
 ```http
-GET /user/tools/generic/login_details/{{tool_name}}
+GET https://app.armorcode.com/user/tools/generic/login_details/{{tool_name}}
 ```
 </td>
 		</tr>
@@ -69,7 +69,7 @@ mappings = await client.get_all_mappings_by_login_id(tool_name, login_id)
 			<td>
 
 ```http
-POST /user/tools/generic/configurations/{{toolName}}
+POST https://app.armorcode.com/user/tools/generic/configurations/{{toolName}}
 Content-Type: application/json
 
 {
@@ -156,7 +156,7 @@ projects = await client.get_all_projects_by_login_id(tool_name, login_id)
 			<td>
 
 ```http
-GET /user/tools/generic/configurations/{{toolName}}/project
+GET https://app.armorcode.com/user/tools/generic/configurations/{{toolName}}/project
     ?login_id={{loginId}}
     &page=0
 
