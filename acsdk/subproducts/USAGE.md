@@ -18,7 +18,7 @@ subproducts = await client.get_all_subproducts()
 			<td>
 
 ```http
-GET /user/sub-product/elastic
+GET https://app.armorcode.com/user/sub-product/elastic
     ?environmentName=PRODUCTION
     &pageSize=20
     &pageNumber=0

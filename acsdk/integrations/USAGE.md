@@ -18,7 +18,7 @@ integrations = await client.get_all_integrations()
 			<td>
 
 ```http
-GET /user/tools/integration-tools/status
+GET https://app.armorcode.com/user/tools/integration-tools/status
 ```
 </td>
 		</tr>

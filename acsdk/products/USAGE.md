@@ -156,7 +156,7 @@ product = await client.get_product_by_id(product_id)
 			<td>
 
 ```http
-GET /user/product/{{productId}}
+GET https://app.armorcode.com/user/product/{{productId}}
 ```
 </td>
 		</tr>
