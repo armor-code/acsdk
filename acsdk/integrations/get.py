@@ -1,6 +1,5 @@
 import asyncio
 from itertools import chain
-from tqdm.asyncio import tqdm
 
 from .. import integrations
 from ..util import fetch, Promise

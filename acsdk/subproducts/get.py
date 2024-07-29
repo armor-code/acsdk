@@ -1,6 +1,5 @@
 import asyncio
 from itertools import chain
-from tqdm.asyncio import tqdm
 
 from ..util import fetch, Promise, match_fuzzy
 
@@ -31,7 +30,7 @@ async def get_all_subproducts(session):
 
     subproducts = response["content"]
 
-    pages = await tqdm.gather(*tasks)
+    pages = await asyncio.gather(*tasks)
 
     subproducts.extend(chain.from_iterable(pages))
 

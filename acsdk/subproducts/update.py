@@ -1,7 +1,6 @@
 import asyncio
 from itertools import chain
 from .get import get_subproduct_by_id
-from tqdm.asyncio import tqdm
 
 from ..util import fetch, Promise
 
