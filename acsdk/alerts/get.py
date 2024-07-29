@@ -1,6 +1,5 @@
 import asyncio
 from itertools import chain
-from tqdm.asyncio import tqdm
 
 from ..util import fetch, Promise
 
@@ -29,7 +28,7 @@ async def get_all_alerts(session):
 
     alerts = response["content"]
 
-    pages = await tqdm.gather(*tasks)
+    pages = await asyncio.gather(*tasks)
 
     alerts.extend(chain.from_iterable(pages))
 

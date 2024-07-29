@@ -13,7 +13,6 @@ setup(
     install_requires=[
         "aiohttp",
         "asyncstdlib",
-        "throttler",
-        "tqdm"
+        "throttler"
     ]
 )

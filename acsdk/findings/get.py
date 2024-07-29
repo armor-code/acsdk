@@ -1,6 +1,5 @@
 import asyncio
 from itertools import chain
-from tqdm.asyncio import tqdm
 
 from ..util import fetch, Promise
 
@@ -37,7 +36,7 @@ async def get_all_findings(session, **kwargs):
 
     findings = response["content"]
 
-    pages = await tqdm.gather(*tasks)
+    pages = await asyncio.gather(*tasks)
 
     findings.extend(chain.from_iterable(pages))
 
@@ -69,7 +68,7 @@ async def get_all_findings_by_saved_search_id(session, saved_search_id):
 
     findings = response["content"]
 
-    pages = await tqdm.gather(*tasks)
+    pages = await asyncio.gather(*tasks)
 
     findings.extend(chain.from_iterable(pages))
 
