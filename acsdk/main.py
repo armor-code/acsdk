@@ -79,8 +79,8 @@ class ArmorCodeClient(aiohttp.ClientSession):
 
     from .logins import _get_all_mappings_by_login_id
 
-    def get_all_mappings_by_login_id(self, tool_name, login_id):
-        return self._get_all_mappings_by_login_id(tool_name, login_id)
+    def get_all_mappings_by_login_id(self, tool_name, login_id, tool_type="PULL"):
+        return self._get_all_mappings_by_login_id(tool_name, login_id, tool_type)
 
 
     from .logins import _get_all_logins_by_tool_name
