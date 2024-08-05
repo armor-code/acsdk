@@ -20,7 +20,7 @@ async def get_all_logins_by_tool_name(session, tool_name):
         elif "Push script" in endpoint:
             endpoint = endpoint["Push script"]
         #elif "Scan upload" in endpoint:
-        #    endpoint = endpoint["Scan upload"]
+        #   endpoint = endpoint["Scan upload"]
         else:
             print(endpoint)
             #raise Exception()
@@ -35,7 +35,9 @@ async def get_all_logins_by_tool_name(session, tool_name):
 
     return response
 
-def _get_mappings_by_login_id(session, tool_name, login_id, page_number=None):
+def _get_mappings_by_login_id(session, tool_name, login_id, tool_type, page_number=None):
+    print(tool_name, login_id, tool_type, page_number)
+
     return fetch(session, "post", "/user/tools/generic/configurations/" + str(tool_name), json={
         **({"page": str(page_number)} if page_number is not None else {}),
         "size": 10,
@@ -43,13 +45,13 @@ def _get_mappings_by_login_id(session, tool_name, login_id, page_number=None):
         "sortOrder": "desc",
         "sortColumn": "createdAt",
         "filters": {},
-        "toolType":"PULL",
+        "toolType": tool_type,
         "loginId": login_id,
         "toolFilters": {}
     }, retry = True) # THIS CALL IS IDEMPOTENT
 
-async def get_all_mappings_by_login_id(session, tool_name, login_id):
-    response = await (await _get_mappings_by_login_id(session, tool_name, login_id)).json()
+async def get_all_mappings_by_login_id(session, tool_name, login_id, tool_type="PULL"):
+    response = await (await _get_mappings_by_login_id(session, tool_name, login_id, tool_type)).json()
 
     total_pages = math.ceil(response["totalElements"] / 10)
 
@@ -58,7 +60,7 @@ async def get_all_mappings_by_login_id(session, tool_name, login_id):
     if total_pages >= 1:
         for page_number in range(1, total_pages):
             tasks.append(asyncio.create_task(Promise.reduce_series([
-                _get_mappings_by_login_id(session, tool_name, login_id, page_number),
+                _get_mappings_by_login_id(session, tool_name, login_id, tool_type, page_number),
                 lambda response: response.json(),
                 lambda data: data["configurations"]
             ])))
