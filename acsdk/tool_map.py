@@ -777,6 +777,7 @@ tool_map["Flashpoint VulnDB"] = "GET /user/generic/configs/FLASH_POINT"
 # Aliases
 
 tool_map["APIKEY"] = tool_map["ArmorCode API"]
+tool_map["ARMORCODE_AGENT"] = tool_map["ArmorCode Agent"]
 tool_map["AZURE_REPOS"] = tool_map["Azure Repos"]
 tool_map["Dependabot"] = tool_map["GitHub Dependabot"]
 tool_map["FLASH_POINT"] = tool_map["Flashpoint VulnDB"]
@@ -787,4 +788,3 @@ tool_map["Netsparker"] = tool_map["Netsparker (Invicti)"]
 tool_map["NodeZero"] = tool_map["Horizon3.ai NodeZero"]
 tool_map["Tenable Infrastructure"] = tool_map["Tenable Vulnerability Management"]
 tool_map["VERSION_ONE"] = tool_map["Digital.ai Agility"]
-tool_map["ARMORCODE_AGENT"] = tool_map["ArmorCode Agent"]
