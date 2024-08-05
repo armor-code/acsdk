@@ -23,9 +23,9 @@ async def update_team_by_id(session, team_id):
             "approvers": []
         },
         "emailAlias": "",
-        "msTeamsLoginId": null,
+        "msTeamsLoginId": None,
         "msTeamsChannel": [],
-        "accessOnAllBusinessUnits": false,
+        "accessOnAllBusinessUnits": False,
         "id": team_id
     })
 

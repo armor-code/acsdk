@@ -1,4 +1,4 @@
-# @title get users
+# @title get all users
 GET /user/data/users
 
 HTTP/1.1 200 - OK
