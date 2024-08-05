@@ -96,3 +96,44 @@ GET https://app.armorcode.com/api/alerts
 ```
 
 </details>
+
+<details><summary><code>client.mark_alerts_as_read(alert_ids)</code></summary>
+
+#### Example:
+
+<table>
+	<tbody>
+		<tr>
+			<th width="441"><strong>Python</strong></td>
+			<th width="441"><strong>REST</strong></td>
+		</tr>
+		<tr>
+			<td>
+
+```python
+await client.mark_alerts_as_read(alert_ids)
+```
+</td>
+			<td>
+
+```http
+PUT https://app.armorcode.com/api/alerts/update
+Content-Type: application/json
+
+{
+    "state": "READ",
+    "id": ["1116"]
+}
+```
+</td>
+		</tr>
+	</tbody>
+</table>
+
+#### Response:
+
+```
+Updated Alerts
+```
+
+</details>

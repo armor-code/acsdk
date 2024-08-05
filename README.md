@@ -184,6 +184,47 @@ GET https://app.armorcode.com/api/alerts
 
 </details>
 
+<details><summary><code>client.mark_alerts_as_read(alert_ids)</code></summary>
+
+#### Example:
+
+<table>
+	<tbody>
+		<tr>
+			<th width="441"><strong>Python</strong></td>
+			<th width="441"><strong>REST</strong></td>
+		</tr>
+		<tr>
+			<td>
+
+```python
+await client.mark_alerts_as_read(alert_ids)
+```
+</td>
+			<td>
+
+```http
+PUT https://app.armorcode.com/api/alerts/update
+Content-Type: application/json
+
+{
+    "state": "READ",
+    "id": ["1116"]
+}
+```
+</td>
+		</tr>
+	</tbody>
+</table>
+
+#### Response:
+
+```
+Updated Alerts
+```
+
+</details>
+
 ### Findings
 
 <details><summary><code>client.get_all_findings()</code></summary>
@@ -843,6 +884,8 @@ GET https://app.armorcode.com/user/findings/saved-search/{{saved_search_id}}
 </details>
 
 
+`client.update_finding_by_id()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+
 ### Integrations
 
 <details><summary><code>client.get_all_integrations()</code></summary>
@@ -901,6 +944,12 @@ GET https://app.armorcode.com/user/tools/integration-tools/status
 ```
 
 </details>
+
+`client.create_configuration()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+
+`client.update_configuration_by_id()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+
+`client.delete_configuration_by_id()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
 
 ### Security Tools
 
@@ -1169,6 +1218,8 @@ GET https://app.armorcode.com/user/tools/generic/configurations/{{toolName}}/pro
 
 </details>
 
+
+`client.create_login()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
 
 ### Products
 
@@ -1518,6 +1569,12 @@ N/A
 
 </details>
 
+
+`client.create_product()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+
+`client.update_product_by_id()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+
+`client.delete_product_by_id()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
 
 ### Sub-products
 
@@ -1880,6 +1937,12 @@ N/A
 </details>
 
 
+`client.create_subproduct()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+
+`client.update_subproduct_by_id()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+
+`client.delete_subproduct_by_id()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+
 ### Teams
 
 <details><summary><code>client.get_all_teams()</code></summary>
@@ -1990,6 +2053,12 @@ GET https://app.armorcode.com/api/team/{{teamId}}
 
 </details>
 
+`client.create_team()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+
+`client.update_team()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+
+`client.delete_team()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+
 ### Users
 
 <details><summary><code>client.get_all_users()</code></summary>
@@ -2087,6 +2156,12 @@ GET https://app.armorcode.com/user/data/users
 ```
 
 </details>
+
+`client.create_user()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+
+`client.update_user()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+
+`client.delete_user()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
 
 ## Advanced Usage
 

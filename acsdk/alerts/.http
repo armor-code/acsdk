@@ -69,3 +69,17 @@ Content-Type: application/json
     "numberOfElements": 1,
     "empty": false
 }
+
+# @title mark alerts as read
+PUT /api/alerts/update
+Content-Type: application/json
+
+{
+    "state": "READ",
+    "id": ["1116"]
+}
+
+HTTP/1.1 200 - OK
+Content-Type: application/json
+
+Updated Alerts
