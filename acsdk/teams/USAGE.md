@@ -40,7 +40,7 @@ GET https://app.armorcode.com/api/team/filters
 
 </details>
 
-<details><summary><code>client.get_team_by_id()</code></summary>
+<details><summary><code>client.get_team_by_id(team_id)</code></summary>
 
 #### Example:
 
@@ -54,7 +54,7 @@ GET https://app.armorcode.com/api/team/filters
 			<td>
 
 ```python
-team = await client.get_team_by_id()
+team = await client.get_team_by_id(team_id)
 ```
 </td>
 			<td>

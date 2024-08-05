@@ -1,4 +1,4 @@
-<details><summary><code>client.get_all_logins_by_tool_name()</code></summary>
+<details><summary><code>client.get_all_logins_by_tool_name(tool_name)</code></summary>
 
 #### Example:
 

@@ -67,7 +67,7 @@ user = await client.get_user_by_id(user_id)
 			<td>
 
 ```http
-GET https://app.armorcode.com/user/data/users
+N/A
 ```
 </td>
 		</tr>

@@ -1012,7 +1012,7 @@ GET https://app.armorcode.com/user/tools/appsec-tools/status
 
 ### Logins
 
-<details><summary><code>client.get_all_logins_by_tool_name()</code></summary>
+<details><summary><code>client.get_all_logins_by_tool_name(tool_name)</code></summary>
 
 #### Example:
 
@@ -1987,7 +1987,7 @@ GET https://app.armorcode.com/api/team/filters
 
 </details>
 
-<details><summary><code>client.get_team_by_id()</code></summary>
+<details><summary><code>client.get_team_by_id(team_id)</code></summary>
 
 #### Example:
 
@@ -2001,7 +2001,7 @@ GET https://app.armorcode.com/api/team/filters
 			<td>
 
 ```python
-team = await client.get_team_by_id()
+team = await client.get_team_by_id(team_id)
 ```
 </td>
 			<td>
@@ -2055,9 +2055,9 @@ GET https://app.armorcode.com/api/team/{{teamId}}
 
 `client.create_team()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
 
-`client.update_team()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+`client.update_team_by_id(team_id)` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
 
-`client.delete_team()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+`client.delete_team_by_id(team_id)` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
 
 ### Users
 
@@ -2130,7 +2130,7 @@ user = await client.get_user_by_id(user_id)
 			<td>
 
 ```http
-GET https://app.armorcode.com/user/data/users
+N/A
 ```
 </td>
 		</tr>
@@ -2159,9 +2159,9 @@ GET https://app.armorcode.com/user/data/users
 
 `client.create_user()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
 
-`client.update_user()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+`client.update_user_by_id(user_id)` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
 
-`client.delete_user()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
+`client.delete_user_by_id(user_id)` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
 
 ## Advanced Usage
 
