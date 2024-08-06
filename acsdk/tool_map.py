@@ -763,7 +763,7 @@ tool_map = {
         "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=ZAP&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/ZAP"
     },
-    "AlertConnect": "GET /api/alerts/alert-notification-stats?criticallity=CRITICAL&state=UNREAD",
+    "AlertConnect": {},
     "ArmorCode Agent": "GET /api/ac-agent/config/all",
     "ArmorCode API": "GET /user/apikey",
     "Automox": "GET /api/tools/automox/",
