@@ -225,7 +225,6 @@ Updated Alerts
 
 </details>
 
-
 ### Findings
 
 <details><summary><code>client.get_all_findings()</code></summary>
