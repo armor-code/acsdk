@@ -1220,6 +1220,52 @@ GET https://app.armorcode.com/user/tools/generic/configurations/{{toolName}}/pro
 </details>
 
 
+<details><summary><code>client.get_all_unmapped_projects_by_login_id(tool_name, login_id)</code></summary>
+
+#### Example:
+
+<table>
+	<tbody>
+		<tr>
+			<th width="441"><strong>Python</strong></td>
+			<th width="441"><strong>REST</strong></td>
+		</tr>
+		<tr>
+			<td>
+
+```python
+projects = await client.get_all_unmapped_projects_by_login_id(tool_name, login_id)
+```
+</td>
+			<td>
+
+```http
+N/A
+```
+</td>
+		</tr>
+	</tbody>
+</table>
+
+#### Response:
+
+```json
+[
+    {
+        "name": "PROJECT_NAME",
+        "id": "72",
+        "mappedStatus": null,
+        "versions": null,
+        "projectStatus": null,
+        "otherProperties": null,
+        "tags": null
+    }
+]
+```
+
+</details>
+
+
 `client.create_login()` <sup><sup>NOT YET IMPLEMENTED</sup></sup>
 
 ### Products
