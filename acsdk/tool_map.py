@@ -10,8 +10,8 @@ tool_map = {
     "AWS Security Hub": {
         "API": "GET /user/tools/generic/login_details/AWS%20Security%20Hub",
         "WebHook": "GET /user/tools/generic/configurations/AWS%20Security%20Hub/?toolType=WEBHOOK",
-        "Push script": "GET /user/tools/generic/configurations/filters/AWS%20Security%20Hub/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/AWS%20Security%20Hub/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/AWS%20Security%20Hub/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=AWS+Security+Hub&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/AWS%20Security%20Hub"
     },
     "Acunetix": {
@@ -22,15 +22,15 @@ tool_map = {
     },
     "Amazon GuardDuty": {
         "WebHook": "GET /user/tools/generic/configurations/Amazon%20GuardDuty/?toolType=WEBHOOK",
-        "Push script": "GET /user/tools/generic/configurations/filters/Amazon%20GuardDuty/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Amazon%20GuardDuty/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Amazon%20GuardDuty/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Amazon+GuardDuty&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Amazon%20GuardDuty"
     },
     "Amazon Inspector": {
         "API": "GET /user/tools/generic/login_details/Amazon%20Inspector",
         "WebHook": "GET /user/tools/generic/configurations/Amazon%20Inspector/?toolType=WEBHOOK",
-        "Push script": "GET /user/tools/generic/configurations/filters/Amazon%20Inspector/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Amazon%20Inspector/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Amazon%20Inspector/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Amazon+Inspector&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Amazon%20Inspector"
     },
     "Apiiro": {
@@ -76,8 +76,8 @@ tool_map = {
     },
     "Blackduck Hub": {
         "API": "GET /user/tools/generic/login_details/Blackduck%20Hub",
-        "Push script": "GET /user/tools/generic/configurations/filters/Blackduck%20Hub/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Blackduck%20Hub/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Blackduck%20Hub/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Blackduck+Hub&triggerby=UI_UPLOAD",
         "Settings": "GET /api/tool-settings/Blackduck%20Hub"
     },
     "Blubracket": {
@@ -104,14 +104,14 @@ tool_map = {
         "Settings": "GET /user/tools/scheduler/default/Bugcrowd"
     },
     "Bundler Audit": {
-        "Push script": "GET /user/tools/generic/configurations/filters/Bundler%20Audit/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Bundler%20Audit/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Bundler%20Audit/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Bundler+Audit&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Bundler%20Audit"
     },
     "Burpsuite Enterprise": {
         "API": "GET /user/tools/generic/login_details/Burpsuite%20Enterprise",
-        "Push script": "GET /user/tools/generic/configurations/filters/Burpsuite%20Enterprise/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Burpsuite%20Enterprise/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Burpsuite%20Enterprise/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Burpsuite+Enterprise&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Burpsuite%20Enterprise"
     },
     "Burpsuite": {
@@ -121,14 +121,14 @@ tool_map = {
     },
     "Checkmarx One": {
         "API": "GET /user/tools/generic/login_details/Checkmarx%20One",
-        "Push script": "GET /user/tools/generic/configurations/filters/Checkmarx%20One/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Checkmarx%20One/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Checkmarx%20One/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Checkmarx+One&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Checkmarx%20One"
     },
     "Checkmarx SCA": {
         "API": "GET /user/tools/generic/login_details/Checkmarx%20SCA",
-        "Push script": "GET /user/tools/generic/configurations/filters/Checkmarx%20SCA/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Checkmarx%20SCA/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Checkmarx%20SCA/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Checkmarx+SCA&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Checkmarx%20SCA"
     },
     "Checkmarx": {
@@ -150,8 +150,8 @@ tool_map = {
     },
     "Cloud Optix": {
         "API": "GET /user/tools/generic/login_details/Cloud%20Optix",
-        "Push script": "GET /user/tools/generic/configurations/filters/Cloud%20Optix/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Cloud%20Optix/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Cloud%20Optix/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Cloud+Optix&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Cloud%20Optix"
     },
     "Cobalt": {
@@ -162,14 +162,14 @@ tool_map = {
     },
     "Contrast Security": {
         "API": "GET /user/tools/generic/login_details/Contrast%20Security",
-        "Push script": "GET /user/tools/generic/configurations/filters/Contrast%20Security/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Contrast%20Security/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Contrast%20Security/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Contrast+Security&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Contrast%20Security"
     },
     "Cortex XDR": {
         "API": "GET /user/tools/generic/login_details/Cortex%20XDR",
-        "Push script": "GET /user/tools/generic/configurations/filters/Cortex%20XDR/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Cortex%20XDR/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Cortex%20XDR/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Cortex+XDR&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Cortex%20XDR"
     },
     "Coverity": {
@@ -180,8 +180,8 @@ tool_map = {
     },
     "CrowdStrike Falcon": {
         "API": "GET /user/tools/generic/login_details/CrowdStrike%20Falcon",
-        "Push script": "GET /user/tools/generic/configurations/filters/CrowdStrike%20Falcon/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/CrowdStrike%20Falcon/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/CrowdStrike%20Falcon/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=CrowdStrike+Falcon&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/CrowdStrike%20Falcon"
     },
     "CycloneDX": {
@@ -197,8 +197,8 @@ tool_map = {
     },
     "Data Theorem": {
         "API": "GET /user/tools/generic/login_details/Data%20Theorem",
-        "Push script": "GET /user/tools/generic/configurations/filters/Data%20Theorem/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Data%20Theorem/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Data%20Theorem/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Data+Theorem&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Data%20Theorem"
     },
     "Deepfence": {
@@ -208,23 +208,24 @@ tool_map = {
         "Settings": "GET /user/tools/scheduler/default/Deepfence"
     },
     "Dependency Check": {
-        "Push script": "GET /user/tools/generic/configurations/filters/Dependency%20Check/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Dependency%20Check/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Dependency%20Check/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Dependency+Check&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Dependency%20Check"
     },
     "Dependency Track": {
-        "Push script": "GET /user/tools/generic/configurations/filters/Dependency%20Track/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Dependency%20Track/?page=0&size=10&toolType=PUSH",
+        "API": "GET /user/tools/generic/login_details/Dependency%20Track",
+        "Push script": "GET /user/tools/generic/configurations/Dependency%20Track/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Dependency+Track&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Dependency%20Track"
     },
     "Detect Secrets": {
-        "Push script": "GET /user/tools/generic/configurations/filters/Detect%20Secrets/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Detect%20Secrets/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Detect%20Secrets/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Detect+Secrets&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Detect%20Secrets"
     },
     "Docker Scout": {
-        "Push script": "GET /user/tools/generic/configurations/filters/Docker%20Scout/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Docker%20Scout/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Docker%20Scout/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Docker+Scout&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Docker%20Scout"
     },
     "Edgescan": {
@@ -235,8 +236,8 @@ tool_map = {
     },
     "Endor Labs": {
         "API": "GET /user/tools/generic/login_details/Endor%20Labs",
-        "Push script": "GET /user/tools/generic/configurations/filters/Endor%20Labs/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Endor%20Labs/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Endor%20Labs/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Endor+Labs&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Endor%20Labs"
     },
     "FiniteState": {
@@ -259,26 +260,26 @@ tool_map = {
     },
     "GitHub Code Scan": {
         "API": "GET /user/tools/generic/login_details/Github%20Code%20Scan",
-        "Push script": "GET /user/tools/generic/configurations/filters/Github%20Code%20Scan/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Github%20Code%20Scan/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Github%20Code%20Scan/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Github+Code+Scan&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Github%20Code%20Scan"
     },
     "GitHub Dependabot": {
         "API": "GET /user/tools/generic/login_details/Dependabot",
-        "Push script": "GET /user/tools/generic/configurations/filters/Dependabot/?toolType=PUSH",
-        "Scan upload": "GET /api/scan-filters?tool=Dependabot&triggerby=UI_UPLOAD",
+        "Push script": "GET /user/tools/generic/configurations/Dependabot/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Dependabot&triggerby=UI_UPLOAD",
         "Settings": "GET /api/tenant-config?configType=SYNC_DEPENDABOT_PRS"
     },
     "GitHub Secret Scan": {
         "API": "GET /user/tools/generic/login_details/Github%20Secret%20Scan",
-        "Push script": "GET /user/tools/generic/configurations/filters/Github%20Secret%20Scan/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Github%20Secret%20Scan/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Github%20Secret%20Scan/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Github+Secret+Scan&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Github%20Secret%20Scan"
     },
     "Gitlab Security": {
         "API": "GET /user/tools/generic/login_details/Gitlab%20Security",
-        "Push script": "GET /user/tools/generic/configurations/filters/Gitlab%20Security/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Gitlab%20Security/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Gitlab%20Security/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Gitlab+Security&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Gitlab%20Security"
     },
     "Gitleaks": {
@@ -288,8 +289,8 @@ tool_map = {
     },
     "Google Cloud Registry": {
         "API": "GET /user/tools/generic/login_details/Google%20Cloud%20Registry",
-        "Push script": "GET /user/tools/generic/configurations/filters/Google%20Cloud%20Registry/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Google%20Cloud%20Registry/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Google%20Cloud%20Registry/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Google+Cloud+Registry&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Google%20Cloud%20Registry"
     },
     "Google Security Command Center": {
@@ -297,20 +298,20 @@ tool_map = {
         "Settings": "GET /user/tools/scheduler/default/Google%20Security%20Command%20Center"
     },
     "Gosec Scanner": {
-        "Push script": "GET /user/tools/generic/configurations/filters/Gosec%20Scanner/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Gosec%20Scanner/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Gosec%20Scanner/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Gosec+Scanner&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Gosec%20Scanner"
     },
     "Grammatech - CodeSentry": {
         "API": "GET /user/tools/generic/login_details/Grammatech%20-%20CodeSentry",
-        "Push script": "GET /user/tools/generic/configurations/filters/Grammatech%20-%20CodeSentry/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Grammatech%20-%20CodeSentry/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Grammatech%20-%20CodeSentry/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Grammatech+-+CodeSentry&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Grammatech%20-%20CodeSentry"
     },
     "Grammatech - CodeSonar": {
         "API": "GET /user/tools/generic/login_details/Grammatech%20-%20CodeSonar",
-        "Push script": "GET /user/tools/generic/configurations/filters/Grammatech%20-%20CodeSonar/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Grammatech%20-%20CodeSonar/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Grammatech%20-%20CodeSonar/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Grammatech+-+CodeSonar&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Grammatech%20-%20CodeSonar"
     },
     "Grype": {
@@ -324,14 +325,14 @@ tool_map = {
     },
     "Halo Security": {
         "API": "GET /user/tools/generic/login_details/Halo%20Security",
-        "Push script": "GET /user/tools/generic/configurations/filters/Halo%20Security/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Halo%20Security/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Halo%20Security/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Halo+Security&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Halo%20Security"
     },
     "Horizon3.ai NodeZero": {
         "API": "GET /user/tools/generic/login_details/NodeZero",
-        "Push script": "GET /user/tools/generic/configurations/filters/NodeZero/?toolType=PUSH",
-        "Scan upload": "GET /api/scan-filters?tool=NodeZero&triggerby=UI_UPLOAD",
+        "Push script": "GET /user/tools/generic/configurations/NodeZero/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=NodeZero&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/NodeZero"
     },
     "IriusRisk": {
@@ -342,8 +343,8 @@ tool_map = {
     },
     "JFrog Xray": {
         "API": "GET /user/tools/generic/login_details/JFrog%20Xray",
-        "Push script": "GET /user/tools/generic/configurations/filters/JFrog%20Xray/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/JFrog%20Xray/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/JFrog%20Xray/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=JFrog+Xray&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/JFrog%20Xray"
     },
     "Kics": {
@@ -409,19 +410,19 @@ tool_map = {
     },
     "Microsoft Defender for Cloud": {
         "API": "GET /user/tools/generic/login_details/Microsoft%20Defender%20for%20Cloud",
-        "Push script": "GET /user/tools/generic/configurations/filters/Microsoft%20Defender%20for%20Cloud/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Microsoft%20Defender%20for%20Cloud/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Microsoft%20Defender%20for%20Cloud/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Microsoft+Defender+for+Cloud&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Microsoft%20Defender%20for%20Cloud"
     },
     "Microsoft Defender for Endpoint": {
         "API": "GET /user/tools/generic/login_details/Microsoft%20Defender%20for%20Endpoint",
-        "Push script": "GET /user/tools/generic/configurations/filters/Microsoft%20Defender%20for%20Endpoint/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Microsoft%20Defender%20for%20Endpoint/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Microsoft%20Defender%20for%20Endpoint/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Microsoft+Defender+for+Endpoint&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Microsoft%20Defender%20for%20Endpoint"
     },
     "Mozilla Observatory": {
-        "Push script": "GET /user/tools/generic/configurations/filters/Mozilla%20Observatory/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Mozilla%20Observatory/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Mozilla%20Observatory/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Mozilla+Observatory&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Mozilla%20Observatory"
     },
     "Nessus": {
@@ -431,8 +432,8 @@ tool_map = {
     },
     "Netsparker (Invicti)": {
         "API": "GET /user/tools/generic/login_details/Netsparker",
-        "Push script": "GET /user/tools/generic/configurations/filters/Netsparker/?toolType=PUSH",
-        "Scan upload": "GET /api/scan-filters?tool=Netsparker&triggerby=UI_UPLOAD",
+        "Push script": "GET /user/tools/generic/configurations/Netsparker/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Netsparker&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Netsparker"
     },
     "Nikto": {
@@ -454,8 +455,8 @@ tool_map = {
     },
     "Orca Security": {
         "API": "GET /user/tools/generic/login_details/Orca%20Security",
-        "Push script": "GET /user/tools/generic/configurations/filters/Orca%20Security/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Orca%20Security/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Orca%20Security/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Orca+Security&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Orca%20Security"
     },
     "Polaris": {
@@ -471,14 +472,14 @@ tool_map = {
     },
     "Prisma Cloud Redlock": {
         "API": "GET /user/tools/generic/login_details/Prisma%20Cloud%20Redlock",
-        "Push script": "GET /user/tools/generic/configurations/filters/Prisma%20Cloud%20Redlock/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Prisma%20Cloud%20Redlock/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Prisma%20Cloud%20Redlock/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Prisma+Cloud+Redlock&triggerby=UI_UPLOAD",
         "Settings": "GET /api/tool-settings/Prisma%20Cloud%20Redlock"
     },
     "Prisma Cloud Twistlock": {
         "API": "GET /user/tools/generic/login_details/Prisma%20Cloud%20Twistlock",
-        "Push script": "GET /user/tools/generic/configurations/filters/Prisma%20Cloud%20Twistlock/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Prisma%20Cloud%20Twistlock/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Prisma%20Cloud%20Twistlock/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Prisma+Cloud+Twistlock&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Prisma%20Cloud%20Twistlock"
     },
     "Probely": {
@@ -494,45 +495,51 @@ tool_map = {
     },
     "Qualys Infrastructure": {
         "API": "GET /user/tools/generic/login_details/Qualys%20Infrastructure",
-        "Push script": "GET /user/tools/generic/configurations/filters/Qualys%20Infrastructure/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Qualys%20Infrastructure/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Qualys%20Infrastructure/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Qualys+Infrastructure&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Qualys%20Infrastructure"
     },
     "Qualys WebApp": {
         "API": "GET /user/tools/generic/login_details/Qualys%20WebApp",
-        "Push script": "GET /user/tools/generic/configurations/filters/Qualys%20WebApp/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Qualys%20WebApp/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Qualys%20WebApp/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Qualys+WebApp&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Qualys%20WebApp"
     },
     "Qwiet AI": {
         "API": "GET /user/tools/generic/login_details/Qwiet%20AI",
-        "Push script": "GET /user/tools/generic/configurations/filters/Qwiet%20AI/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Qwiet%20AI/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Qwiet%20AI/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Qwiet+AI&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Qwiet%20AI"
     },
     "Rapid7 Insight": {
         "API": "GET /user/tools/generic/login_details/Rapid7%20Insight",
-        "Push script": "GET /user/tools/generic/configurations/filters/Rapid7%20Insight/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Rapid7%20Insight/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Rapid7%20Insight/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Rapid7+Insight&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Rapid7%20Insight"
     },
     "Rapid7 InsightVM": {
         "API": "GET /user/tools/generic/login_details/Rapid7%20InsightVM",
-        "Push script": "GET /user/tools/generic/configurations/filters/Rapid7%20InsightVM/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Rapid7%20InsightVM/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Rapid7%20InsightVM/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Rapid7+InsightVM&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Rapid7%20InsightVM"
     },
     "Rapid7 nexpose": {
         "API": "GET /user/tools/generic/login_details/Rapid7%20nexpose",
-        "Push script": "GET /user/tools/generic/configurations/filters/Rapid7%20nexpose/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Rapid7%20nexpose/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Rapid7%20nexpose/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Rapid7+nexpose&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Rapid7%20nexpose"
     },
     "Redhat ACS": {
         "API": "GET /user/tools/generic/login_details/Redhat%20ACS",
-        "Push script": "GET /user/tools/generic/configurations/filters/Redhat%20ACS/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Redhat%20ACS/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Redhat%20ACS/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Redhat+ACS&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Redhat%20ACS"
+    },
+    "RiskRecon": {
+        "API": "GET /user/tools/generic/login_details/RiskRecon",
+        "Push script": "GET /user/tools/generic/configurations/filters/RiskRecon/?toolType=PUSH",
+        "Scan upload": "GET /api/scan-filters?tool=RiskRecon&triggerby=UI_UPLOAD",
+        "Settings": "GET /user/tools/scheduler/default/RiskRecon"
     },
     "RunZero": {
         "API": "GET /user/tools/generic/login_details/RunZero",
@@ -542,8 +549,8 @@ tool_map = {
     },
     "SD Elements": {
         "API": "GET /user/tools/generic/login_details/SD%20Elements",
-        "Push script": "GET /user/tools/generic/configurations/filters/SD%20Elements/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/SD%20Elements/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/SD%20Elements/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=SD+Elements&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/SD%20Elements"
     },
     "Safety": {
@@ -553,13 +560,13 @@ tool_map = {
     },
     "Salt Security": {
         "WebHook": "GET /user/tools/generic/configurations/Salt%20Security/?toolType=WEBHOOK",
-        "Push script": "GET /user/tools/generic/configurations/filters/Salt%20Security/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Salt%20Security/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Salt%20Security/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Salt+Security&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Salt%20Security"
     },
     "Scout Suite": {
-        "Push script": "GET /user/tools/generic/configurations/filters/Scout%20Suite/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Scout%20Suite/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Scout%20Suite/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Scout+Suite&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Scout%20Suite"
     },
     "SecurityScorecard": {
@@ -606,14 +613,14 @@ tool_map = {
     },
     "Sonatype Lifecycle": {
         "API": "GET /user/tools/generic/login_details/Sonatype%20Lifecycle",
-        "Push script": "GET /user/tools/generic/configurations/filters/Sonatype%20Lifecycle/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Sonatype%20Lifecycle/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Sonatype%20Lifecycle/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Sonatype+Lifecycle&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Sonatype%20Lifecycle"
     },
     "Sonrai Security": {
         "API": "GET /user/tools/generic/login_details/Sonrai%20Security",
-        "Push script": "GET /user/tools/generic/configurations/filters/Sonrai%20Security/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Sonrai%20Security/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Sonrai%20Security/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Sonrai+Security&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Sonrai%20Security"
     },
     "Spectral": {
@@ -642,8 +649,8 @@ tool_map = {
     },
     "Tenable Cloud Security": {
         "API": "GET /user/tools/generic/login_details/Tenable%20Cloud%20Security",
-        "Push script": "GET /user/tools/generic/configurations/filters/Tenable%20Cloud%20Security/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Tenable%20Cloud%20Security/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Tenable%20Cloud%20Security/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Tenable+Cloud+Security&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Tenable%20Cloud%20Security"
     },
     "Tenable Vulnerability Management": {
@@ -652,8 +659,8 @@ tool_map = {
     },
     "Tenable Webapp": {
         "API": "GET /user/tools/generic/login_details/Tenable%20Webapp",
-        "Push script": "GET /user/tools/generic/configurations/filters/Tenable%20Webapp/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Tenable%20Webapp/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Tenable%20Webapp/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Tenable+Webapp&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Tenable%20Webapp"
     },
     "Tenable.sc": {
@@ -679,8 +686,8 @@ tool_map = {
     },
     "VM SecureState": {
         "API": "GET /user/tools/generic/login_details/VM%20SecureState",
-        "Push script": "GET /user/tools/generic/configurations/filters/VM%20SecureState/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/VM%20SecureState/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/VM%20SecureState/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=VM+SecureState&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/VM%20SecureState"
     },
     "Veracode": {
@@ -699,14 +706,14 @@ tool_map = {
         "Settings": "GET /user/tools/scheduler/default/Wallarm"
     },
     "Web Inspect": {
-        "Push script": "GET /user/tools/generic/configurations/filters/Web%20Inspect/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Web%20Inspect/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Web%20Inspect/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Web+Inspect&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Web%20Inspect"
     },
     "WhiteHat Sentinel": {
         "API": "GET /user/tools/generic/login_details/WhiteHat%20Sentinel",
-        "Push script": "GET /user/tools/generic/configurations/filters/WhiteHat%20Sentinel/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/WhiteHat%20Sentinel/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/WhiteHat%20Sentinel/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=WhiteHat+Sentinel&triggerby=UI_UPLOAD",
         "Settings": "GET /api/business-unit-setting/toolConfig/WhiteHat%20Sentinel"
     },
     "Wiz": {
@@ -717,8 +724,8 @@ tool_map = {
         "Settings": "GET /user/tools/scheduler/default/Wiz"
     },
     "Yarn Audit": {
-        "Push script": "GET /user/tools/generic/configurations/filters/Yarn%20Audit/?toolType=PUSH",
-        "Scan upload": "GET /user/tools/generic/configurations/Yarn%20Audit/?page=0&size=10&toolType=PUSH",
+        "Push script": "GET /user/tools/generic/configurations/Yarn%20Audit/?page=0&size=10&toolType=PUSH",
+        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Yarn+Audit&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/Yarn%20Audit"
     },
     "ZAP": {
