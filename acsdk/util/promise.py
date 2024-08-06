@@ -23,7 +23,12 @@ class Promise:
                 else:
                     return next(result)
             elif callable(current):
-                return await next(await current())
+                if inspect.iscoroutinefunction(current):
+                    current = await current()
+                else:
+                    current = current()
+
+                return await next(current)
             else:
                 if isinstance(current, tuple):
                     current = await Promise.map_parallel(current)

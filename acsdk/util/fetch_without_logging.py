@@ -4,7 +4,7 @@ import asyncio
 # 100 requests/minute
 @Limiter(rate_limit=100, period=60)
 async def fetch(session, method, url, attempts=0, retry=None, **kwargs):
-    response = await getattr(session, method)(url, ssl=False, **kwargs)
+    response = await getattr(session, method)(url, **kwargs)
 
     if 400 <= response.status < 500 and (method == "get" or retry == True):
         print("Request `" + method.upper()  + " " +  url + "` failed with status code " + str(response.status))

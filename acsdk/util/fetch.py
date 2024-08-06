@@ -63,8 +63,7 @@ async def fetch(session, method, url, debug=True, attempts=0, **kwargs):
     response_buffer = []
 
     try:
-        # XXX: Remove `ssl=False``
-        response = await getattr(session, method)(url, **kwargs, ssl=False)
+        response = await getattr(session, method)(url, **kwargs)
 
         if debug == True:
             response_buffer.append("HTTP " + str(response.status))  # + " " + response.status_text)
