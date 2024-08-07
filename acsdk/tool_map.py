@@ -184,36 +184,6 @@ tool_map = {
         "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=CrowdStrike+Falcon&triggerby=UI_UPLOAD",
         "Settings": "GET /user/tools/scheduler/default/CrowdStrike%20Falcon"
     },
-    "Custom-AutomationTool": {
-        "Push script": "GET /user/tools/generic/configurations/Custom-AutomationTool/?toolType=PUSH",
-        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Custom-AutomationTool&triggerby=UI_UPLOAD",
-        "Fields Mapping": "GET /user/tools/custom/configurations/44",
-        "Settings": "GET /user/tools/scheduler/default/Custom-AutomationTool"
-    },
-    "Custom-Automationsample": {
-        "Push script": "GET /user/tools/generic/configurations/Custom-Automationsample/?toolType=PUSH",
-        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Custom-Automationsample&triggerby=UI_UPLOAD",
-        "Fields Mapping": "GET /user/tools/custom/configurations/46",
-        "Settings": "GET /user/tools/scheduler/default/Custom-Automationsample"
-    },
-    "Custom-Sample": {
-        "Push script": "GET /user/tools/generic/configurations/Custom-Sample/?toolType=PUSH",
-        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Custom-Sample&triggerby=UI_UPLOAD",
-        "Fields Mapping": "GET /user/tools/custom/configurations/47",
-        "Settings": "GET /user/tools/scheduler/default/Custom-Sample"
-    },
-    "Custom-Test SSDLC": {
-        "Push script": "GET /user/tools/generic/configurations/Custom-Test%20SSDLC/?toolType=PUSH",
-        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Custom-Test+SSDLC&triggerby=UI_UPLOAD",
-        "Fields Mapping": "GET /user/tools/custom/configurations/178",
-        "Settings": "GET /user/tools/scheduler/default/Custom-Test%20SSDLC"
-    },
-    "Custom-random": {
-        "Push script": "GET /user/tools/generic/configurations/Custom-random/?toolType=PUSH",
-        "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=Custom-random&triggerby=UI_UPLOAD",
-        "Fields Mapping": "GET /user/tools/custom/configurations/48",
-        "Settings": "GET /user/tools/scheduler/default/Custom-random"
-    },
     "CycloneDX": {
         "Push script": "GET /user/tools/generic/configurations/CycloneDX/?page=0&size=10&toolType=PUSH",
         "Scan upload": "GET /api/scans?findingCounts=NEW&page=0&size=10&sort=createdAt%2Cdesc&tool=CycloneDX&triggerby=UI_UPLOAD",

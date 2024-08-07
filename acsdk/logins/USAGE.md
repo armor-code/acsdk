@@ -204,7 +204,6 @@ GET https://app.armorcode.com/user/tools/generic/configurations/{{toolName}}/pro
 
 </details>
 
-
 <details><summary><code>client.get_all_unmapped_projects_by_login_id(tool_name, login_id)</code></summary>
 
 #### Example:

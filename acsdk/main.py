@@ -133,16 +133,16 @@ class ArmorCodeClient(aiohttp.ClientSession):
         return self._get_products_by_name(product_name)
 
 
-    from .products import _update_product_by_id
-
-    def update_product_by_id(self, product_id, partial_product_payload):
-        return self._update_product_by_id(product_id, partial_product_payload)
-
-
     from .products import _create_product
 
     def create_product(self, product_name, product_payload={}):
         return self._create_product(product_name, product_payload)
+
+
+    from .products import _update_product_by_id
+
+    def update_product_by_id(self, product_id, partial_product_payload):
+        return self._update_product_by_id(product_id, partial_product_payload)
 
 
     from .products import _delete_product_by_id
