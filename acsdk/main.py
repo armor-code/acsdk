@@ -3,6 +3,7 @@ import re
 
 from .version import __version__
 
+
 class ArmorCodeClient(aiohttp.ClientSession):
     version = __version__
 
@@ -12,11 +13,11 @@ class ArmorCodeClient(aiohttp.ClientSession):
 
         connector = aiohttp.TCPConnector()
 
-        super().__init__(base_url=overrides.get("base_url", "https://app.armorcode.com"), connector=connector, headers={
-            "Authorization": "Bearer " + api_key,
-            "User-Agent": "ArmorCode Python SDK v" + __version__
-        })
-
+        super().__init__(
+            base_url=overrides.get("base_url", "https://app.armorcode.com"),
+            connector=connector,
+            headers={"Authorization": "Bearer " + api_key, "User-Agent": "ArmorCode Python SDK v" + __version__},
+        )
 
     # ===== from .alerts import * =====
 
@@ -25,7 +26,6 @@ class ArmorCodeClient(aiohttp.ClientSession):
     def get_all_alerts(self):
         return self._get_all_alerts()
 
-
     # ===== from .findings import * =====
 
     from .findings import _get_all_findings
@@ -33,18 +33,20 @@ class ArmorCodeClient(aiohttp.ClientSession):
     def get_all_findings(self):
         return self._get_all_findings()
 
-
     from .findings import _get_finding_by_id
 
     def get_finding_by_id(self, finding_id):
         return self._get_finding_by_id(finding_id)
-
 
     from .findings import _get_all_findings_by_saved_search_id
 
     def get_all_findings_by_saved_search_id(self, saved_search_id):
         return self._get_all_findings_by_saved_search_id(saved_search_id)
 
+    from .findings import _get_all_findings_by_subproduct_id
+
+    def get_all_findings_by_subproduct_id(self, subproduct_id):
+        return self._get_all_findings_by_subproduct_id(subproduct_id)
 
     # ===== from .installations import * =====
 
@@ -53,7 +55,6 @@ class ArmorCodeClient(aiohttp.ClientSession):
     def get_all_installations_by_tool_name(self, tool_name):
         return self._get_all_installations_by_tool_name(tool_name)
 
-
     # ===== from .integrations import * =====
 
     from .integrations import _get_all_integrations
@@ -61,19 +62,20 @@ class ArmorCodeClient(aiohttp.ClientSession):
     def get_all_integrations(self):
         return self._get_all_integrations()
 
-
     from .integrations import _create_configuration
 
     # FIXME: Too many parameters.
-    def create_configuration(self, configuration_name, configuration_token, configuration_host_url, configuration_repository_type):
-        return self._create_configuration(configuration_name, configuration_token, configuration_host_url, configuration_repository_type)
-
+    def create_configuration(
+        self, configuration_name, configuration_token, configuration_host_url, configuration_repository_type
+    ):
+        return self._create_configuration(
+            configuration_name, configuration_token, configuration_host_url, configuration_repository_type
+        )
 
     from .integrations import _delete_configuration_by_id
 
     def delete_configuration_by_id(self, configuration_id):
         return self._delete_configuration_by_id(configuration_id)
-
 
     # ===== from .logins import * =====
 
@@ -82,36 +84,30 @@ class ArmorCodeClient(aiohttp.ClientSession):
     def get_all_mappings_by_login_id(self, tool_name, login_id, tool_type="PULL"):
         return self._get_all_mappings_by_login_id(tool_name, login_id, tool_type)
 
-
     from .logins import _get_all_logins_by_tool_name
 
     def get_all_logins_by_tool_name(self, tool_name):
         return self._get_all_logins_by_tool_name(tool_name)
-
 
     from .logins import _get_all_projects_by_login_id
 
     def get_all_projects_by_login_id(self, tool_name, login_id):
         return self._get_all_projects_by_login_id(tool_name, login_id)
 
-
     from .logins import _get_project_by_name
 
     def get_project_by_name(self, tool_name, login_id, project_name):
         return self._get_project_by_name(tool_name, login_id, project_name)
-
 
     from .logins import _get_all_unmapped_projects_by_login_id
 
     def get_all_unmapped_projects_by_login_id(self, tool_name, login_id):
         return self._get_all_unmapped_projects_by_login_id(tool_name, login_id)
 
-
     from .logins import _create_login
 
     def create_login(self, tool_name):
         return self._create_login(tool_name)
-
 
     # ===== from .products import * =====
 
@@ -120,36 +116,30 @@ class ArmorCodeClient(aiohttp.ClientSession):
     def get_all_products(self):
         return self._get_all_products()
 
-
     from .products import _get_product_by_id
 
     def get_product_by_id(self, product_id):
         return self._get_product_by_id(product_id)
-
 
     from .products import _get_products_by_name
 
     def get_products_by_name(self, product_name):
         return self._get_products_by_name(product_name)
 
-
     from .products import _create_product
 
     def create_product(self, product_name, product_payload={}):
         return self._create_product(product_name, product_payload)
-
 
     from .products import _update_product_by_id
 
     def update_product_by_id(self, product_id, partial_product_payload):
         return self._update_product_by_id(product_id, partial_product_payload)
 
-
     from .products import _delete_product_by_id
 
     def delete_product_by_id(self, product_id):
         return self._delete_product_by_id(product_id)
-
 
     # ===== from .security_tools import * =====
 
@@ -165,36 +155,35 @@ class ArmorCodeClient(aiohttp.ClientSession):
     def get_all_subproducts(self):
         return self._get_all_subproducts()
 
-
     from .subproducts import _get_subproduct_by_id
 
     def get_subproduct_by_id(self, subproduct_id):
         return self._get_subproduct_by_id(subproduct_id)
-
 
     from .subproducts import _get_subproducts_by_name
 
     def get_subproducts_by_name(self, subproduct_name):
         return self._get_subproducts_by_name(subproduct_name)
 
+    from .subproducts import _get_all_subproducts_by_product_id
+
+    def get_all_subproducts_by_product_id(self, product_id):
+        return self._get_all_subproducts_by_product_id(product_id)
 
     from .subproducts import _update_subproduct_by_id
 
     def update_subproduct_by_id(self, subproduct_id, partial_subproduct_payload={}):
         return self._update_subproduct_by_id(subproduct_id, partial_subproduct_payload)
 
-
     from .subproducts import _create_subproduct
 
     def create_subproduct(self, product_id, subproduct_name, subproduct_payload={}):
         return self._create_subproduct(product_id, subproduct_name, subproduct_payload)
 
-
     from .subproducts import _delete_subproduct_by_id
 
     def delete_subproduct_by_id(self, subproduct_id):
         return self._delete_subproduct_by_id(subproduct_id)
-
 
     # ===== from .teams import * =====
 
@@ -203,30 +192,25 @@ class ArmorCodeClient(aiohttp.ClientSession):
     def get_all_teams(self):
         return self._get_all_teams()
 
-
     from .teams import _get_team_by_id
 
     def get_team_by_id(self, team_id):
         return self._get_team_by_id(team_id)
-
 
     # from .teams import _create_team
     #
     # def create_team(self):
     #     return self._create_team()
 
-
     # from .teams import _update_team_by_id
     #
     # def update_team_by_id(self):
     #     return self._update_team_by_id()
 
-
     from .teams import _delete_team_by_id
 
     def delete_team_by_id(self, team_id):
         return self._delete_team_by_id(team_id)
-
 
     # ===== from .users import * =====
 
@@ -235,27 +219,22 @@ class ArmorCodeClient(aiohttp.ClientSession):
     def get_all_users(self):
         return self._get_all_users()
 
-
     from .users import _get_user_by_id
 
     def get_user_by_id(self, user_id):
         return self._get_user_by_id(user_id)
-
 
     # from .users import _create_user
     #
     # def create_user(self):
     #     return self._create_user()
 
-
     # from .users import _update_user_by_id
     #
     # def update_user_by_id(self):
     #     return self._update_user_by_id()
 
-
     from .users import _delete_user_by_id
 
     def delete_user_by_id(self, user_id):
         return self._delete_user_by_id(user_id)
-        
