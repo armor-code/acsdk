@@ -5,11 +5,12 @@ import signal
 from typing import Iterable
 from asyncstdlib import filter as afilter, list as alist, reduce
 
+
 class Promise:
     @staticmethod
     async def map_series(tasks, initial=None):
         return [await task(initial) for task in tasks]
-    
+
     @staticmethod
     async def reduce_series(tasks, initial=None):
         async def reducer(current, next):
@@ -18,7 +19,13 @@ class Promise:
             elif inspect.iscoroutine(current):
                 result = await current
 
-                if type(result) is tuple:
+                # while inspect.iscoroutine(result) or callable(result):
+                #    if callable(result):
+                #        result = result()
+                #
+                #    result = await result
+
+                if isinstance(result, tuple):
                     return next(*result)
                 else:
                     return next(result)
@@ -40,23 +47,37 @@ class Promise:
         if initial is not None:
             tasks.insert(0, initial)
 
-        #try:
+        # try:
         return await reduce(reducer, tasks)
-        #except Exception as error:
+        # except Exception as error:
         #    return
 
     @staticmethod
     async def map_parallel(iterable):
-        async def identity(item=[]):
+        async def identity(item=None):
+            if item is None:
+                item = []
+
             return item
 
         tasks = []
 
         for item in iterable:
             if isinstance(item, (list, tuple)):
-                tasks.extend([item if inspect.iscoroutine(item) else identity(item) for item in chain.from_iterable(item)])
+                tasks.extend(
+                    [item if inspect.iscoroutine(item) else identity(item) for item in chain.from_iterable(item)]
+                )
             elif inspect.isasyncgen(item):
-                tasks.append(identity(*[item async for item in afilter(lambda item: not isinstance(item, Iterable) or len(item) > 0, item)]))
+                tasks.append(
+                    identity(
+                        *[
+                            item
+                            async for item in afilter(
+                                lambda item: not isinstance(item, Iterable) or len(item) > 0, item
+                            )
+                        ]
+                    )
+                )
             elif inspect.iscoroutine(item):
                 tasks.append(item)
             else:

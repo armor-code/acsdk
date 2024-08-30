@@ -4,6 +4,7 @@ import asyncio
 import json
 import re
 
+
 def flush(buffer, callback):
     for x in range(0, len(buffer)):
         if x % 2 == 0:
@@ -23,7 +24,7 @@ async def attempt_parse(response):
     if content_type is None and int(content_length) > 0:
         body = (await array_buffer).decode("utf8")
 
-        if re.search(r'[^\r\n\x20-\x7E]', body):
+        if re.search(r"[^\r\n\x20-\x7E]", body):
             content_type = "text/plain"
 
     if content_type is not None and content_type.endswith("json"):
@@ -73,18 +74,20 @@ async def fetch(session, method, url, debug=True, attempts=0, **kwargs):
                     response_buffer.append(header + ": " + response.headers.get(header))
 
         if 400 <= response.status < 500 and method == "get":
-            response_buffer.append("Request `" + method.upper()  + " " +  url + "` failed with status code " + str(response.status)) # + " " + response.statusText).strip())
-
-            body = await attempt_parse(response)
-
-            if body is not None:
-                response_buffer.extend(pprint(body).splitlines())
-
-            response_buffer.append("Retrying...")
-
-            flush([request_buffer, response_buffer], print)
-
             if attempts < 2:
+                response_buffer.append(
+                    "Request `" + method.upper() + " " + url + "` failed with status code " + str(response.status)
+                )  # + " " + response.statusText).strip())
+
+                body = await attempt_parse(response)
+
+                if body is not None:
+                    response_buffer.extend(pprint(body).splitlines())
+
+                response_buffer.append("Retrying...")
+
+                flush([request_buffer, response_buffer], print)
+
                 await asyncio.sleep(2 ** (attempts + 1))
 
                 return await fetch(session, method, url, debug=True, attempts=attempts + 1, **kwargs)

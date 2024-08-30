@@ -4,7 +4,7 @@ from itertools import chain
 from ..util import fetch, Promise
 
 
-def _get_findings(session, page_number=None, **kwargs):
+def _get_findings(session, page_number=None, partial_findings_search_payload=None):
     return fetch(
         session,
         "post",
@@ -16,7 +16,7 @@ def _get_findings(session, page_number=None, **kwargs):
             "sort": "",
             "sortColumns": [],
             "ticketStatusRequired": True,
-            **(kwargs.get("json") if kwargs.get("json") is not None else {}),
+            **(partial_findings_search_payload if partial_findings_search_payload is not None else {}),
             **({"page": str(page_number)} if page_number is not None else {}),
             "size": 100,
         },
@@ -27,8 +27,8 @@ def _clamp(minimum, x, maximum):
     return max(minimum, min(x, maximum))
 
 
-async def get_all_findings(session, **kwargs):
-    response = await (await _get_findings(session, **kwargs)).json()
+async def get_all_findings(session, partial_findings_search_payload=None):
+    response = await (await _get_findings(session, partial_findings_search_payload)).json()
 
     total_pages = _clamp(0, response["totalPages"], 100)
 
@@ -40,7 +40,7 @@ async def get_all_findings(session, **kwargs):
                 asyncio.create_task(
                     Promise.reduce_series(
                         [
-                            _get_findings(session, page_number, **kwargs),
+                            _get_findings(session, page_number, partial_findings_search_payload),
                             lambda response: response.json(),
                             lambda data: data["content"],
                         ]
@@ -109,6 +109,5 @@ async def get_all_findings_by_saved_search_id(session, saved_search_id):
     return findings
 
 
-def get_all_findings_by_subproduct_id(session, subproduct_id):
-    # TODO
-    pass
+async def get_all_findings_by_subproduct_id(session, subproduct_id, partial_findings_search_payload=None):
+    return await get_all_findings(session, partial_findings_search_payload)
