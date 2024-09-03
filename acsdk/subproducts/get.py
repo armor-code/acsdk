@@ -78,4 +78,10 @@ async def get_subproducts_by_name(session, subproduct_name):
 
 
 async def get_all_subproducts_by_product_id(session, product_id):
-    return ((await (await fetch(session, "get", "/user/product/" + str(product_id)))).json())["subProductJpaDtos"]
+    response = await fetch(session, "get", "/user/product/" + str(product_id))
+
+    data = await response.json()
+
+    subproducts = data["subProductJpaDtos"]
+
+    return subproducts
