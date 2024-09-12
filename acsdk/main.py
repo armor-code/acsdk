@@ -11,7 +11,7 @@ class ArmorCodeClient(aiohttp.ClientSession):
         if not re.search(r"\w{8}-\w{4}-\w{4}-\w{4}-\w{12}", api_key):
             raise TypeError("This doesn't look like any API key that I've ever seen!")
 
-        connector = aiohttp.TCPConnector()
+        connector = aiohttp.TCPConnector(limit=2)
 
         super().__init__(
             base_url=overrides.get("base_url", "https://app.armorcode.com"),
