@@ -64,13 +64,8 @@ class ArmorCodeClient(aiohttp.ClientSession):
 
     from .integrations import _create_configuration
 
-    # FIXME: Too many parameters.
-    def create_configuration(
-        self, configuration_name, configuration_token, configuration_host_url, configuration_repository_type
-    ):
-        return self._create_configuration(
-            configuration_name, configuration_token, configuration_host_url, configuration_repository_type
-        )
+    def create_configuration(self, configuration):
+        return self._create_configuration(configuration)
 
     from .integrations import _delete_configuration_by_id
 
