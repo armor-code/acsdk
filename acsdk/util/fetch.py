@@ -38,8 +38,8 @@ async def attempt_parse(response):
     return body
 
 
-# 100 requests/minute
-@Limiter(rate_limit=100, period=60)
+# 50 requests/minute
+@Limiter(rate_limit=50, period=60)
 async def fetch(session, method, url, debug=True, attempts=0, **kwargs):
     headers = kwargs.get("headers")
     body = kwargs.get("body", kwargs.get("json"))

@@ -2,8 +2,8 @@ from throttler import throttle as Limiter
 import asyncio
 
 
-# 100 requests/minute
-@Limiter(rate_limit=100, period=60)
+# 50 requests/minute
+@Limiter(rate_limit=50, period=60)
 async def fetch(session, method, url, attempts=0, retry=None, **kwargs):
     response = await getattr(session, method)(url, **kwargs)
 
