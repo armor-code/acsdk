@@ -9,23 +9,40 @@ def _get_findings(session, after_key=None, partial_findings_search_payload=None)
     return fetch(
         session,
         "post",
-        "/user/findings/",
+        "/api/findings/",
+        params=list({"afterKey": after_key}.items()),
         json={
             "filters": {},
             "ignoreDuplicate": True,
             "ignoreMitigated": None,
             "sort": "",
-            "sortColumns": [],
+            # "sortColumns": [],
             "ticketStatusRequired": True,
             **(partial_findings_search_payload if partial_findings_search_payload is not None else {}),
-            **({"afterKey": after_key} if after_key is not None else {}),
-            "size": 100,
+            # **({"afterKey": after_key} if after_key is not None else {}),
+            # "size": 100,
         },
     )
 
 
 async def get_all_findings(session, partial_findings_search_payload=None):
-    response = await (await _get_findings(session, partial_findings_search_payload)).json()
+    response = await (
+        await fetch(
+            session,
+            "post",
+            "/user/findings/",
+            json={
+                "filters": {},
+                "ignoreDuplicate": True,
+                "ignoreMitigated": None,
+                "sort": "",
+                "sortColumns": [],
+                "ticketStatusRequired": True,
+                **(partial_findings_search_payload if partial_findings_search_payload is not None else {}),
+                "size": 10,
+            },
+        )
+    ).json()
 
     findings = response["content"]
 
@@ -33,9 +50,9 @@ async def get_all_findings(session, partial_findings_search_payload=None):
 
     if total_pages >= 1:
         for _ in range(1, total_pages):
-            response = await (await _get_findings(session, findings[-1], partial_findings_search_payload)).json()
+            response = await (await _get_findings(session, findings[-1]["id"], partial_findings_search_payload)).json()
 
-            findings.extend(chain.from_iterable(response["content"]))
+            findings.extend(response["data"]["findings"])
 
     return findings
 
@@ -62,6 +79,11 @@ def _get_findings_by_saved_search_id(
     )
 
 
+def _clamp(minimum, x, maximum):
+    return max(minimum, min(x, maximum))
+
+
+# TODO: Switch to using `/api/savedSearch/findings`?
 async def get_all_findings_by_saved_search_id(session, saved_search_id):
     response = await (await _get_findings_by_saved_search_id(session, saved_search_id)).json()
 
