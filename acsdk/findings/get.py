@@ -32,7 +32,7 @@ async def get_all_findings(session, partial_findings_search_payload=None):
     total_pages = math.ceil(response["totalPages"] / 100)
 
     if total_pages >= 1:
-        for x in range(1, total_pages):
+        for _ in range(1, total_pages):
             response = await (await _get_findings(session, findings[-1], partial_findings_search_payload)).json()
 
             findings.extend(chain.from_iterable(response["content"]))
