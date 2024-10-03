@@ -88,8 +88,23 @@ async def get_all_mappings_by_login_id(session, tool_name, login_id, tool_type="
     return mappings
 
 
-def _get_projects_by_login_id(session, tool_name, login_id):
-    # This endpoint doesn't appear to respect pagination parameters
+def _get_projects_by_login_id(session, tool_name, login_id, page_number=None):
+    # TODO: Improve
+    if tool_name == "GITLAB":
+        return fetch(
+            session,
+            "get",
+            "/user/tools/git/gitInstallation/" + str(login_id) + "/repos",
+            params=list(
+                {"login_id": login_id}.items(),
+                {
+                    **({"page": str(page_number)} if page_number is not None else {}),
+                    "size": 10,
+                    "sortColumn": "",
+                }.items(),
+            ),
+        )
+
     return fetch(
         session,
         "get",
@@ -99,7 +114,33 @@ def _get_projects_by_login_id(session, tool_name, login_id):
 
 
 async def get_all_projects_by_login_id(session, tool_name, login_id):
-    return (await (await _get_projects_by_login_id(session, tool_name, login_id)).json())["projects"]
+    response = await (await _get_projects_by_login_id(session, tool_name, login_id)).json()
+
+    total_pages = math.ceil(response.get("total", response.get("totalElements")) / 10)
+
+    tasks = []
+
+    if total_pages >= 1:
+        for page_number in range(1, total_pages):
+            tasks.append(
+                asyncio.create_task(
+                    Promise.reduce_series(
+                        [
+                            _get_projects_by_login_id(session, tool_name, login_id, page_number),
+                            lambda response: response.json(),
+                            lambda data: data.get("content", data.get("projects")),
+                        ]
+                    )
+                )
+            )
+
+    projects = response.get("content", response.get("projects"))
+
+    pages = await asyncio.gather(*tasks)
+
+    projects.extend(chain.from_iterable(pages))
+
+    return projects
 
 
 async def get_all_unmapped_projects_by_login_id(session, tool_name, login_id):

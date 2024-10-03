@@ -101,8 +101,8 @@ class ArmorCodeClient(aiohttp.ClientSession):
 
     from .logins import _create_login
 
-    def create_login(self, tool_name):
-        return self._create_login(tool_name)
+    def create_login(self, tool_name, configuration):
+        return self._create_login(tool_name, configuration)
 
     # ===== from .products import * =====
 
