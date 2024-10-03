@@ -1,10 +1,11 @@
 import asyncio
 from itertools import chain
+import math
 
 from ..util import fetch, Promise
 
 
-def _get_findings(session, page_number=None, partial_findings_search_payload=None):
+def _get_findings(session, after_key=None, partial_findings_search_payload=None):
     return fetch(
         session,
         "post",
@@ -17,42 +18,24 @@ def _get_findings(session, page_number=None, partial_findings_search_payload=Non
             "sortColumns": [],
             "ticketStatusRequired": True,
             **(partial_findings_search_payload if partial_findings_search_payload is not None else {}),
-            **({"page": str(page_number)} if page_number is not None else {}),
+            **({"afterKey": after_key} if after_key is not None else {}),
             "size": 100,
         },
     )
 
 
-def _clamp(minimum, x, maximum):
-    return max(minimum, min(x, maximum))
-
-
 async def get_all_findings(session, partial_findings_search_payload=None):
     response = await (await _get_findings(session, partial_findings_search_payload)).json()
 
-    total_pages = _clamp(0, response["totalPages"], 100)
-
-    tasks = []
-
-    if total_pages >= 1:
-        for page_number in range(1, total_pages):
-            tasks.append(
-                asyncio.create_task(
-                    Promise.reduce_series(
-                        [
-                            _get_findings(session, page_number, partial_findings_search_payload),
-                            lambda response: response.json(),
-                            lambda data: data["content"],
-                        ]
-                    )
-                )
-            )
-
     findings = response["content"]
 
-    pages = await asyncio.gather(*tasks)
+    total_pages = math.ceil(response["totalPages"] / 100)
 
-    findings.extend(chain.from_iterable(pages))
+    if total_pages >= 1:
+        for x in range(1, total_pages):
+            response = await (await _get_findings(session, findings[-1], partial_findings_search_payload)).json()
+
+            findings.extend(chain.from_iterable(response["content"]))
 
     return findings
 
